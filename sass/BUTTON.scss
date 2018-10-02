@@ -1,0 +1,45 @@
+.btn {
+    display: inline-block;
+    padding: 15px 10px;
+    background: #00ff00;
+    font-family: 'Helvetica';
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 10px;
+    margin: 10px;
+    color: #fff;
+}
+.btn:hover {
+    background: #005522;
+}
+
+$colormap: (
+    green: (
+        background: #00ff00,
+        backgroundhover: #00cc00
+    ),
+    blue: (
+        background: #0000ff,
+        backgroundhover: #0000cc
+    ),
+    red: (
+        background: #ff0000,
+        backgroundhover: #cc0000
+    )
+);
+
+@each $color, $map in $colormap {
+    @each $key, $val in $map {
+        @if ($key == 'background') {
+            .btn.#{$color} {
+                background: $val;
+                color: #fff;
+            }
+        } @else {
+            .btn.#{$color}:hover {
+                background: $val;
+            }
+        }
+    }
+
+}

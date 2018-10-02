@@ -1,0 +1,244 @@
+/*$color: blue;
+$urlSrc: url('https://background.com/bg/bestone.jpg');
+@mixin cssProperty($argOne, $argTwo) {
+    color: $argOne;
+    background: $argTwo;
+}
+
+html {
+    background: $color;
+}
+body {
+    @include cssProperty($color, $urlSrc);
+    font-size: normal;
+}
+
+//list functions
+
+$list1: 200px;
+$list2: 1px 2px 3px black;
+$list3: Helvetica, Arial, sans-serif;
+
+$zip1: 1px 2px 3px 4px;
+$zip2: 4px 3px 2px 1px;
+$zip3: black green blue red;
+
+$NestedList: 1px 2px 3px green, 6px 7px 8px blue, 3px 2px 1px yellow;
+
+html {
+    background: index($list3, Arial);
+    background: zip($zip1, $zip2, $zip3);
+}
+
+//Maps
+
+$map1: (
+    "KeyName": "Value",
+    "AnotherKey": 200px
+);
+
+$map2: ( 'key1': 'value1', 'key2': 'value2','key3': 'value3');
+
+$map3: (
+    'KeyName'  : 'targeting a key produces its value',
+    'String'   : string,
+    'Number'   : 102,
+    'List'     : (background .2s, color .3s),
+    'NestedMap': (
+        'NestedKey': 'Nested value',
+        'url'      : '../images/nestedimg.png',
+        'Width'    : 300px
+    )
+);
+
+.foo{
+    content: map-keys($map1);
+    content: map-values($map1);
+    content: map-has-key($map1, 'KeyName');
+    content: map-get($map3, 'KeyName');
+    content: inspect(map-merge($map1, $map2));
+    content: inspect(map-remove($map2, 'key1', 'key2'));
+}
+
+//Math Operators and functions
+
+$a: 16px; $b: 32px; $c: 4.5px; $d: -12px;
+
+$eq: 4-(6+$b);
+
+div {
+    width: 5 + 10 + $a -$b * 2 / $c;
+    width: round(5 + 10 + $a - $b * 2 / $c);
+    width: floor(5 + 10 + $a - $b * 2 / $c);
+    width: cell(5 + 10 + $a - $b * 2 / $c - .4);
+    width: percentage(4.5);
+    width: abs($d);
+    width: min(10, 20, 50, 50.1, $a);
+    width: max(10, 20, 50, 50.1, $a);
+    width: random(100);
+    height: $b % $c;
+    line-height: $eq;
+}
+
+// If Directives
+
+$type: element;
+$num: 10;
+$noValue: null;
+$eq: $num + 1;
+
+.main {
+    @if $type == helloWorld { content: 'Yup TRUE!';}
+    @else if $noValue != null { content: 'Doesnt match null';}
+    @else { content: 'Nope False!';}
+
+    @if $eq      == 12 {width: 11px;}
+    @else if $eq != 11 {width: 12px;}
+    @else if $eq  > 11 {width: 13px;}
+    @else if $eq  < 11 {width: 14px;}
+    @else if $eq <=  9 {width: 15px;}
+    @else if $eq >= 12 {width: 16px;}
+    @else              {width: 0px;}
+
+}
+
+// Loops
+
+$headers: h1, h2, h3, h4, h5, h6;
+$fontSize: 55px, 45px, 40px, 35px, 30px, 25px;
+
+$len: length($headers);
+
+$index: 1;
+
+
+// Function Directives
+
+@function list-match($list, $list2){
+
+    $len: length($list);
+    $len2: length($list2);
+
+    @if $len == $len2 { @return 'Yup'}
+    @else {@return 'Nope'}
+}
+
+section { width: list-match($headers, $fontSize);}*/
+#grid > div {
+  height: 25px;
+  background: #ccc;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+  float: left; }
+
+#grid.cell-1 > div {
+  width: 100%; }
+
+#grid.cell-2 > div {
+  width: 50%; }
+
+#grid.cell-3 > div {
+  width: 33.3333333333%; }
+
+#grid.cell-4 > div {
+  width: 25%; }
+
+#grid.cell-5 > div {
+  width: 20%; }
+
+#grid.cell-6 > div {
+  width: 16.6666666667%; }
+
+#grid.cell-7 > div {
+  width: 14.2857142857%; }
+
+#grid.cell-8 > div {
+  width: 12.5%; }
+
+#grid.cell-9 > div {
+  width: 11.1111111111%; }
+
+#grid.cell-10 > div {
+  width: 10%; }
+
+#grid.cell-11 > div {
+  width: 9.0909090909%; }
+
+#grid.cell-12 > div {
+  width: 8.3333333333%; }
+
+#grid.cell-13 > div {
+  width: 7.6923076923%; }
+
+#grid.cell-14 > div {
+  width: 7.1428571429%; }
+
+#grid.cell-15 > div {
+  width: 6.6666666667%; }
+
+#grid.cell-16 > div {
+  width: 6.25%; }
+
+@media all and (max-width: 850px) {
+  #grid.cell-850-1 > div {
+    width: 100%; }
+
+  #grid.cell-850-2 > div {
+    width: 50%; }
+
+  #grid.cell-850-3 > div {
+    width: 33.3333333333%; }
+
+  #grid.cell-850-4 > div {
+    width: 25%; }
+
+  #grid.cell-850-5 > div {
+    width: 20%; }
+
+  #grid.cell-850-6 > div {
+    width: 16.6666666667%; }
+
+  #grid.cell-850-7 > div {
+    width: 14.2857142857%; }
+
+  #grid.cell-850-8 > div {
+    width: 12.5%; }
+
+  #grid.cell-850-9 > div {
+    width: 11.1111111111%; }
+
+  #grid.cell-850-10 > div {
+    width: 10%; }
+
+  #grid.cell-850-11 > div {
+    width: 9.0909090909%; }
+
+  #grid.cell-850-12 > div {
+    width: 8.3333333333%; } }
+@media all and (max-width: 550px) {
+  #grid.cell-550-1 > div {
+    width: 100%; }
+
+  #grid.cell-550-2 > div {
+    width: 50%; }
+
+  #grid.cell-550-3 > div {
+    width: 33.3333333333%; }
+
+  #grid.cell-550-4 > div {
+    width: 25%; }
+
+  #grid.cell-550-5 > div {
+    width: 20%; }
+
+  #grid.cell-550-6 > div {
+    width: 16.6666666667%; } }
+@media all and (max-width: 380px) {
+  #grid.cell-380-1 > div {
+    width: 100%; }
+
+  #grid.cell-380-2 > div {
+    width: 50%; }
+
+  #grid.cell-380-3 > div {
+    width: 33.3333333333%; } }
