@@ -1,0 +1,12 @@
+$color: red;
+
+#parent %holder .child{
+    background: #ccc;
+    margin: 0;
+    padding: 0;
+}
+
+
+.content{@extend %holder; font-size: 16px;}
+
+.sign, video, img {@extend %holder; font-weight: bold; margin: 20px;}

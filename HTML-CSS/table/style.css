@@ -1,0 +1,15 @@
+body {
+    display: grid;
+}
+
+table {
+    margin: 0;
+    padding: 0;
+    width: 300px;
+    border-collapse: collapse;
+}
+th, td, tr {
+    border: 1px solid green;
+    height: 20px;
+    margin: 0;
+}

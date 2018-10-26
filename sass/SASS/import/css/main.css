@@ -1,0 +1,25 @@
+body {
+  color: #fff;
+  background: #ccc;
+  font-family: Helvetica, Tahoma, arial, sans-serif; }
+
+@-webkit-keyframes myAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-moz-keyframes myAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@-o-keyframes myAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+@keyframes myAnim {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }

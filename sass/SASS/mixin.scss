@@ -1,0 +1,37 @@
+$color: blue;
+$secondColor: yellow;
+
+@mixin cssProperties($argOne, $argTwo) {
+    #main {
+        color: $argOne;
+        background: #ccc;
+        line-height: $argTwo;
+    }
+}
+
+@mixin boxShadow($shadow){
+    -webkit-box-shadow:$shadow;
+    -moz-box-shadow:$shadow;
+    -o-box-shadow:$shadow;
+    box-shadow:$shadow;
+}
+
+
+
+ body {
+     @include cssProperties($secondColor, 2);
+     @keyframes myMove {
+         from {top: 0px;}
+         to {top: 200px;}
+     }
+
+     .btn {
+        @include boxShadow(5px 5px 10px #ccc);
+        animation: myMove 5s infinite;
+
+        &:hover {
+            cursor: pointer;
+            @include boxShadow(5px 5px 10px #999);
+        }
+     }
+ }

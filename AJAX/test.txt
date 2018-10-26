@@ -1,0 +1,8 @@
+I have written this by AJAX XMLHTTPRequest
+
+So it works!
+
+yoyoyoyoyo
+
+
+sss

@@ -1,0 +1,21 @@
+body #main {
+  color: yellow;
+  background: #ccc;
+  line-height: 2; }
+@keyframes myMove {
+  from {
+    top: 0px; }
+  to {
+    top: 200px; } }
+body .btn {
+  -webkit-box-shadow: 5px 5px 10px #ccc;
+  -moz-box-shadow: 5px 5px 10px #ccc;
+  -o-box-shadow: 5px 5px 10px #ccc;
+  box-shadow: 5px 5px 10px #ccc;
+  animation: myMove 5s infinite; }
+  body .btn:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 5px 5px 10px #999;
+    -moz-box-shadow: 5px 5px 10px #999;
+    -o-box-shadow: 5px 5px 10px #999;
+    box-shadow: 5px 5px 10px #999; }

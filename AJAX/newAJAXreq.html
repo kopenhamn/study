@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script>
+        function loadDoc(){
+            let i, req;
+            let xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    myFunction(this);
+                }
+            }
+            xhttp.open('GET', 'xTest.xml');
+            xhttp.send();
+        }
+        function myFunction(xml){
+            let obj = xml.responseXML;
+            let txt = "";
+            let names = obj.getElementsByTagName("CD");
+            for(i = 0; i < names.length; i++){
+                txt += '<div style="border: 1px solid grey; width: fir-content; padding: 5px">' + (i+1) + ' ' + names[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue + '</div>';
+            }
+            document.getElementById('demo').innerHTML = txt;
+        }
+    </script>
+</head>
+<body>
+    <h1>AJAX request</h1>
+    <div id="demo" style="border:1px grey solid; width:100%">
+        Here will apear responsive text!
+    </div>
+    <button type="button" onclick="loadDoc()">AJAX me</button>
+</body>
+</html>

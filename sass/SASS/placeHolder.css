@@ -1,0 +1,11 @@
+#parent .content .child, #parent .sign .child, #parent video .child, #parent img .child {
+  background: #ccc;
+  margin: 0;
+  padding: 0; }
+
+.content {
+  font-size: 16px; }
+
+.sign, video, img {
+  font-weight: bold;
+  margin: 20px; }
