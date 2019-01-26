@@ -1,0 +1,19 @@
+h1 {
+    margin
+}
+a {
+    list-style-type: s
+}
+
+table {
+    width: 500px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+th,td {
+    height: 20px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ajax test</title>
+</head>
+<body>
+    <h1 id="header">Here will be refreshed info using Ajax request:</h1>
+    <textarea id="demo" cols='80' rows="8" placeholder="ajax content will appear here..."></textarea>
+    <br>
+    <button id="btn">Ajax Me!</button>
+
+    <script type="text/javascript">
+        let reqNum = 0;
+        document.getElementById('btn').onclick = function() {
+            let xhttp = new XMLHttpRequest;
+            xhttp.onreadystatechange = function() {
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById('header').innerText = 'Text below is refreshed using AJAX request:';
+                    document.getElementById('demo').innerHTML = this.responseText;
+                }
+            }
+            if(reqNum == 0) {
+                xhttp.open('GET', 'text.txt', true);
+                reqNum++;
+            } else {
+                xhttp.open('GET', 'test.xml', true);
+                reqNum--;
+            }
+
+            xhttp.send();
+        }
+    </script>
+</body>
+</html>
