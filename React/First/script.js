@@ -93,7 +93,7 @@ class Item extends React.Component {
     }
 }
 
-Items.defaultProps = {
+Item.defaultProps = {
     qty: 0
 }
 
