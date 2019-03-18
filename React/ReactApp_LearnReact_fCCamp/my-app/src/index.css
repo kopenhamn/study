@@ -12,3 +12,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.question {
+    font-weight: bold;
+    color: red;
+}
+
+.punchLine {
+    font-weight: bold;
+    color: green;
+}
