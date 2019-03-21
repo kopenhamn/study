@@ -1,4 +1,4 @@
-function MyApp() {
+function App() {
     return (
         <ul>
             <li>ONE</li>
@@ -10,6 +10,6 @@ function MyApp() {
 
 
 ReactDOM.render(
-    <MyApp />,
+    <App />,
     document.getElementById('root')
 )
