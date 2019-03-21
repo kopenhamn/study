@@ -76,42 +76,65 @@ ReactDOM.render(<SayIt />, document.getElementById("root"))
 //create a Bill
 
 
-class Item extends React.Component {
-    render(){
+class Product extends React.Component {
+
+    render() {
         return (
             <div>
-                {this.props.name} - {this.props.price}$
+                <span className="name">{this.props.name}</span>
+                <span className="price"> - {this.props.price}$</span>
                 <br />
                 <br />
                 <button id="buy" onClick={this.props.buy}>Buy</button> <button>Show</button>
                 <br />
                 <br />
-                <h2>Qty: {this.props.qty} item(s)</h2>
+                <p>Qty: {this.props.qty} item(s)</p>
                 <hr />
             </div>
         )
     }
 }
 
-Item.defaultProps = {
-    qty: 0
-}
-
-let num = 0;
-
-function buyIt() {
-    alert('it works')
-    return this.props.qty += 1;
-}
-
+const productList = [
+    {
+        id: 1,
+        name: 'Samsung',
+        price: 350
+    },
+    {
+        id: 2,
+        name: 'Apple',
+        price: 502
+    },
+    {
+        id: 3,
+        name: 'Asus',
+        price: 400
+    },
+    {
+        id: 4,
+        name: 'Xiaomi',
+        price: 230
+    }
+]
 
 class Bill extends React.Component {
+    constructor() {
+        super()
+        this.state = {
+            product: productList,
+            qty: 0,
+            buy: function () { alert(this.state.qty);return this.state.qty+=1 }
+        }
+    }
     render() {
+        function buy() {
+
+        }
+        const product = this.state.product.map(prod => <Product key={prod.id} name={prod.name} price={prod.price}  qty={this.state.qty} buy={this.state.buy}/>)
         return (
             <div>
-                <Item name='Android' price={502}  buy={()=>{return this.props.qty+=1}} />
-                <Item name='Android' price={502} qty={0} />
-                <Item name='Android' price={502} qty={0} />
+                {product}
             </div>
         )
     }
