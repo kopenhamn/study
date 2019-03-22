@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import ShoppingCart from './components/ShoppingCart'
 
 //20. Props and styling Practice
 import Joke from './components/Joke'
@@ -40,9 +41,33 @@ import todosData from './components/todosData'
 
 //---
 
+// 32
 
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            count: 0
+        }
+        this.handleClick = this.handleClick.bind(this)
+    }
 
+    handleClick() {
+        this.setState(prevState => {return { count: prevState.count + 1}})
+    }
 
+    render() {
+        return (
+            <div>
+                <ShoppingCart />
+                <h1>{this.state.count}</h1>
+                <button onClick={this.handleClick}>Change!</button>
+            </div>
+        )
+    }
+}
+
+/*
 // 29, 31
 class App extends Component {
     constructor() {
@@ -63,14 +88,14 @@ class App extends Component {
     }
 }
 
-/*
+
 // 28
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
-            loggedIn: true
+            loggedIn: false
         }
     }
 
@@ -82,7 +107,10 @@ class App extends Component {
             wordToDisplay = "out"
         }
         return (
-            <h2>You are currently logged {wordToDisplay}.</h2>
+            //v.1
+            //<h2>You are currently logged {wordToDisplay}.</h2>
+            //v.2
+            <h2>You are currently logged {this.state.loggedIn ? "in":"out"}.</h2>
         )
     }
 }

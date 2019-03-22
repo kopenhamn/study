@@ -1,3 +1,5 @@
+import React from 'react'
+
 const productList = [
     {
         id: 1,
@@ -15,7 +17,7 @@ const productList = [
         name: "iPhone 7",
         price: 550,
         description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        available: true
+        available: false
     },
     {
         id: 3,
@@ -44,7 +46,7 @@ function Product(props) {
             <p>Name: <span className="name">{props.item.name}</span></p>
             <p>Brand: {props.item.brand}</p>
             <h3>Price: ${props.item.price}</h3>
-            <p>In stock: {props.item.available}</p>
+            <p>In stock: {props.inStoke}</p>
             <button onClick={props.buy}>Buy it</button>
             <span>  - {props.qty} pcs</span>
             <br />
@@ -55,17 +57,27 @@ function Product(props) {
     )
 }
 
-class App extends React.Component {
+class ShoppingCart extends React.Component {
     constructor() {
         super()
         this.state = {
             qty: 0,
-            total: 0
+            total: 0,
+            buy: () => (alert(this.state.qty), this.state.qty += 1, console.log(this))
         }
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+        this.setState(prevState => {
+            return {
+                qty: prevState.qty + 1
+            }
+        })
     }
 
     render() {
-        let product = productList.map(item => <Product key={item.id} item={item} qty={this.state.qty} buy= {() => (alert(this.state.qty), this.state.qty += 1, console.log(this))} />)
+        let product = productList.map(item => <Product key={item.id} item={item} qty={this.state.qty} buy= {this.handleClick} inStoke={item.available ? "available":"not available"} />)
         console.log(product)
         return (
             <div>
@@ -73,11 +85,6 @@ class App extends React.Component {
             </div>
         )
     }
-
 }
 
-
-ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-)
+export default ShoppingCart
