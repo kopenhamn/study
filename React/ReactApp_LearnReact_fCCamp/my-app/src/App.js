@@ -39,8 +39,44 @@ import todosData from './components/todosData'
 
 //32. Changing State (2:27:20)
 
+//33. Todo App - Phase 6 (2:39:40)
+
 //---
 
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            todos: todosData
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(id) {
+        this.setState(prevState =>{
+            console.log(prevState)
+            const updatedTodo = prevState.todos.map(todo => {
+                if(todo.id === id) {
+                    todo.done = !todo.done
+                }
+                return todo
+            })
+            return { todos: updatedTodo}
+        })
+    }
+
+    render() {
+        let task = this.state.todos.map(item => <TodoItem key = {item.id} item = {item} onChange = {this.handleChange} />)
+        return (
+            <div>
+                {task}
+            </div>
+        )
+    }
+}
+
+
+/*
 // 32
 
 class App extends Component {
@@ -53,13 +89,16 @@ class App extends Component {
     }
 
     handleClick() {
-        this.setState(prevState => {return { count: prevState.count + 1}})
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        })
     }
 
     render() {
         return (
             <div>
-                <ShoppingCart />
                 <h1>{this.state.count}</h1>
                 <button onClick={this.handleClick}>Change!</button>
             </div>
@@ -67,7 +106,7 @@ class App extends Component {
     }
 }
 
-/*
+
 // 29, 31
 class App extends Component {
     constructor() {

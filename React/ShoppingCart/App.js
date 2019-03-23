@@ -63,10 +63,15 @@ class App extends React.Component {
             total: 0,
             buy: () => (alert(this.state.qty), this.state.qty += 1, console.log(this))
         }
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+        this.setState(prevState => {return { qty: prevState.qty + 1}})
     }
 
     render() {
-        let product = productList.map(item => <Product key={item.id} item={item} qty={this.state.qty} buy= {this.state.buy} inStoke={item.available ? "available":"not available"} />)
+        let product = productList.map(item => <Product key={item.id} item={item} qty={this.state.qty} buy= {this.handleClick} inStoke={item.available ? "available":"not available"} />)
         console.log(product)
         return (
             <div>
