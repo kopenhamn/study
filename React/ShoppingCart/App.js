@@ -6,7 +6,9 @@ const productList = [
         name: "Galaxy 6",
         price: 220,
         description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
-        available: true
+        available: true,
+        checkQty: 0,
+        checkTotal: 0
     },
     {
         id: 2,
@@ -15,7 +17,9 @@ const productList = [
         name: "iPhone 7",
         price: 550,
         description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        available: false
+        available: false,
+        checkQty: 0,
+        checkTotal: 0
     },
     {
         id: 3,
@@ -24,7 +28,9 @@ const productList = [
         name: "3310",
         price: 30,
         description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        available: true
+        available: true,
+        checkQty: 0,
+        checkTotal: 0
     },
     {
         id: 4,
@@ -33,7 +39,9 @@ const productList = [
         name: "Y 10",
         price: 220,
         description: "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        available: true
+        available: true,
+        checkQty: 0,
+        checkTotal: 0
     }
 ]
 
@@ -45,7 +53,7 @@ function Product(props) {
             <p>Brand: {props.item.brand}</p>
             <h3>Price: ${props.item.price}</h3>
             <p>In stock: {props.inStoke}</p>
-            <button onClick={props.buy}>Buy it</button>
+            <button onClick={() => props.buy(props.item.id)}>Buy it</button>
             <span>  - {props.qty} pcs</span>
             <br />
             <button>info</button>
@@ -55,27 +63,57 @@ function Product(props) {
     )
 }
 
+function Total(props) {
+    return (
+        <div>
+            <h1>Total: </h1>
+            <span>${props.cost} ({props.qty} pcs.)</span>
+        </div>
+    )
+}
+
 class App extends React.Component {
     constructor() {
         super()
         this.state = {
+            productData: productList,
             qty: 0,
-            total: 0,
-            buy: () => (alert(this.state.qty), this.state.qty += 1, console.log(this))
+            total: 0
         }
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick() {
-        this.setState(prevState => {return { qty: prevState.qty + 1}})
+    handleClick(id) {
+        console.log('first total = ' + this.state.total)
+
+        this.setState(prevState => {
+            const stateItems = prevState.productData.map(item => {
+                if (item.id === id) {
+                    item.checkQty += 1
+                    item.checkTotal += item.price
+                    console.log(item.checkQty, item.checkTotal)
+                }
+                return item
+            })
+            return stateItems
+        })
+
+        this.state.total = () => this.state.productData.map(item => {
+            let total = 0;
+            for(let z = 0; z < item.length; z++) {
+                total += item[z].checkTotal
+            }
+            console.log('total = ' + total)
+            return total
+        })
     }
 
     render() {
-        let product = productList.map(item => <Product key={item.id} item={item} qty={this.state.qty} buy= {this.handleClick} inStoke={item.available ? "available":"not available"} />)
-        console.log(product)
+        let product = productList.map(item => <Product key={item.id} item={item} qty={item.checkQty} buy= {this.handleClick} inStoke={item.available ? "available":"not available"} />)
         return (
             <div>
                 {product}
+                <Total cost={this.state.total} qty={this.state.qty} />
             </div>
         )
     }

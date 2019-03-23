@@ -41,8 +41,17 @@ import todosData from './components/todosData'
 
 //33. Todo App - Phase 6 (2:39:40)
 
-//---
+//-----------------CODE is here----------------------
 
+
+
+
+
+
+//-----------------CODE is here----------------------
+/*
+
+//33:
 class App extends Component {
     constructor() {
         super()
@@ -53,31 +62,28 @@ class App extends Component {
     }
 
     handleChange(id) {
-        this.setState(prevState =>{
-            console.log(prevState)
-            const updatedTodo = prevState.todos.map(todo => {
+        this.setState(prevState => {
+            const updatedTodos = prevState.todos.map(todo => {
                 if(todo.id === id) {
                     todo.done = !todo.done
                 }
                 return todo
             })
-            return { todos: updatedTodo}
+            return updatedTodos
         })
     }
 
     render() {
-        let task = this.state.todos.map(item => <TodoItem key = {item.id} item = {item} onChange = {this.handleChange} />)
+        const todolist = this.state.todos.map(item => <TodoItem key = {item.id} item = {item} onChange = {this.handleChange}/>)
         return (
             <div>
-                {task}
+                {todolist}
             </div>
         )
     }
 }
 
-
-/*
-// 32
+// 32:
 
 class App extends Component {
     constructor() {
