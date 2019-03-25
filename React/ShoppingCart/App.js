@@ -84,27 +84,27 @@ class App extends React.Component {
     }
 
     handleClick(id) {
-        console.log('first total = ' + this.state.total)
-
         this.setState(prevState => {
             const stateItems = prevState.productData.map(item => {
                 if (item.id === id) {
                     item.checkQty += 1
                     item.checkTotal += item.price
-                    console.log(item.checkQty, item.checkTotal)
                 }
                 return item
             })
             return stateItems
         })
 
-        this.state.total = () => this.state.productData.map(item => {
-            let total = 0;
-            for(let z = 0; z < item.length; z++) {
-                total += item[z].checkTotal
+        this.setState(prevState => {
+            let checkTotal = 0
+            let checkQty = 0
+            for(let x = 0; x < prevState.productData.length; x++) {
+                checkTotal += prevState.productData[x].checkTotal
+                checkQty += prevState.productData[x].checkQty
             }
-            console.log('total = ' + total)
-            return total
+
+            prevState.total = checkTotal
+            prevState.qty = checkQty
         })
     }
 
