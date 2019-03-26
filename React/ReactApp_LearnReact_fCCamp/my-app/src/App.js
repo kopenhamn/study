@@ -41,6 +41,10 @@ import todosData from './components/todosData'
 
 //33. Todo App - Phase 6 (2:39:40)
 
+//34. Lifecycle Methods Part 1 (2:47:25)
+
+//35. Lifecycle Methods Part 2 (2:56:55)
+
 //-----------------CODE is here----------------------
 
 
@@ -50,6 +54,47 @@ import todosData from './components/todosData'
 
 //-----------------CODE is here----------------------
 /*
+
+//34:
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+
+        }
+    }
+
+    componentDidMount() {
+        //get the data I need to correctly display
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.whatever !== this.props.whatever) {
+            //do something important here
+        }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        //return true if want it to update
+        //return false if not
+    }
+
+    componentWillUnmount() {
+        //teardown or cleanup your code before your component disapears
+        //(e.g. remove event listeners)
+    }
+
+    render() {
+        return (
+            <div>
+                Hello
+            </div>
+        )
+    }
+}
+
+
 
 //33:
 class App extends Component {
@@ -69,7 +114,9 @@ class App extends Component {
                 }
                 return todo
             })
-            return updatedTodos
+            return {
+                todos: updatedTodos
+            }
         })
     }
 
