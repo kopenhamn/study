@@ -2,7 +2,8 @@ import React from 'react'
 
 function TodoItem(props) {
     return (
-        <div>
+        <div style={props.item.done ? {color:'green', background: '#cfc'} :
+                    {color:'red', background: '#fcc'}}>
             <input
                 type="checkbox"
                 checked={props.item.done}

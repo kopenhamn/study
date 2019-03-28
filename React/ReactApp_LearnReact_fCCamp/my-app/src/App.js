@@ -45,15 +45,126 @@ import todosData from './components/todosData'
 
 //35. Lifecycle Methods Part 2 (2:56:55)
 
+//36. Conditional Rendering (3:00:20)
+import Conditional from './components/Conditional'
+
+//37. Conditional Rendering Part 2 (3:11:35)
+
+//38. Conditional rendering Practice (3:14:35)
+
+//39. Todo App - Phase 7 (3:23:10)
+
+//40. Fetching data from an API (3:25:45)
+
 //-----------------CODE is here----------------------
 
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            todos: todosData
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
 
+    handleChange(id) {
+        this.setState(prevState => {
+            const updatedTodos = {
+                todos: prevState.todos.map(item => {
+                    if(item.id === id) {
+                        item.done = !item.done
+                    }
+                    return item
+                })
+            }
+            return updatedTodos
+        })
+    }
 
-
+    render() {
+        const todoList = this.state.todos.map(item => <TodoItem key = {item.id} item = {item} onChange = {this.handleChange}/>)
+        return (
+            <div>
+                {todoList}
+            </div>
+        )
+    }
+}
 
 
 //-----------------CODE is here----------------------
 /*
+
+//38:
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            logedIn: false
+        }
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick() {
+        this.setState(prevState => {
+            return {
+                logedIn: !prevState.logedIn
+            }
+        })
+    }
+
+    render() {
+        return (
+            <div>
+            <h1>
+                The user is loged {this.state.logedIn ?
+                <span>in.</span> :
+                <span>out.</span>
+                }
+            </h1>
+            <button onClick = {this.handleClick}>
+                {this.state.logedIn ?
+                <span>Logout</span> :
+                <span>Login</span>
+                }
+            </button>
+            </div>
+        )
+    }
+
+}
+
+
+
+//36:
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            isLoading: true
+        }
+    }
+
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({
+                isLoading: false
+            })
+        }, 1500)
+    }
+
+    render() {
+        return(
+            <div>
+                {this.state.isLoading ?
+                <h1>Loading...</h1> :
+                <Conditional />}
+            </div>
+        )
+    }
+}
+
+
 
 //34:
 
