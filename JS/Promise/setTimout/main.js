@@ -10,7 +10,7 @@ function testPromise() {
     // Функция разрешения позволяет завершить успешно или
     // отклонить обещание
     function(resolve, reject) {
-      log.insertAdjacentHTML('beforeend', thisPromiseCount + ') Запуск обещания (запуск асинхронного кода)');
+      log.insertAdjacentHTML('beforeend', `<br>` + thisPromiseCount + ') Запуск обещания (запуск асинхронного кода)');
       // Это всего лишь пример асинхронности
       window.setTimeout(
         function() {
@@ -26,7 +26,7 @@ function testPromise() {
       log.insertAdjacentHTML('beforeend', `<br>` + val + ') Обещание выполнено (асинхронный код завершён)');
     });
 
-  log.insertAdjacentHTML('beforeend', thisPromiseCount + ') Обещание создано (синхронный код завершён)');
+  log.insertAdjacentHTML('beforeend', `<br>` + thisPromiseCount + ') Обещание создано (синхронный код завершён)');
 }
 
 if ("Promise" in window) {

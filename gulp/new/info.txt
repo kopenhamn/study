@@ -1,0 +1,11 @@
+lesson GULP 3
+
+video url: https://www.youtube.com/watch?v=vW51JUVT66w
+(russion)
+
+GULP update 3 => 4 :
+https://youtu.be/kesyrCZE1bA
+
+GULP 4:
+
+url: http://webdesign-master.ru/blog/tools/2016-03-09-gulp-beginners.html

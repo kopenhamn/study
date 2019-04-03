@@ -1,0 +1,12 @@
+{
+    "first": {
+        "name": "Michael",
+        "sirname": "Feninets",
+        "age": 34
+    },
+    "second": {
+        "name": "Olga",
+        "sirname": "Feninets",
+        "age": 37
+    }
+}

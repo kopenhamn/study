@@ -62,35 +62,24 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            todos: todosData
+            loading: true
         }
-        this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange(id) {
-        this.setState(prevState => {
-            const updatedTodos = {
-                todos: prevState.todos.map(item => {
-                    if(item.id === id) {
-                        item.done = !item.done
-                    }
-                    return item
-                })
-            }
-            return updatedTodos
-        })
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({loading: false})
+        }, 3000)
     }
 
     render() {
-        const todoList = this.state.todos.map(item => <TodoItem key = {item.id} item = {item} onChange = {this.handleChange}/>)
-        return (
+        return(
             <div>
-                {todoList}
+                <h1>{this.state.loading ? 'Loading...' : 'Loaded!'}</h1>
             </div>
         )
     }
 }
-
 
 //-----------------CODE is here----------------------
 /*

@@ -1,0 +1,21 @@
+{
+    "students": {
+        "Mike": {
+            "age": 20
+        },
+        "Alice": {
+            "age": 22
+        },
+        "John": {
+            "age": 25
+        }
+    },
+    "teachers": {
+        "Nikolas": {
+            "lesson": "mathematics"
+        },
+        "Anna": {
+            "lesson": "phisics"
+        }
+    }
+}

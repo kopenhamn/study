@@ -1,0 +1,15 @@
+Optimized HTML - https://github.com/agragregra/optimizedhtml-start-template
+
+Hamburgers - https://jonsuh.com/hamburgers/
+
+equalHeights - https://github.com/mattbanks/jQuery.equalHeights
+
+Font-Awesome - https://fontawesome.com/
+
+Fotorama - https://fotorama.io/
+
+Mmenu - https://mmenu.frebsite.nl/
+
+Owl Carousel 2 - https://owlcarousel2.github.io/OwlCarousel2/
+
+Selectize - https://selectize.github.io/selectize.js/
