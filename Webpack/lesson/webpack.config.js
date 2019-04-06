@@ -16,9 +16,26 @@ let conf = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 //exclude: '/node_modules/'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
             }
         ]
     }
 };
 
-module.exports = conf;
+//module.exports можно настраивать на лету в зависимости от режима mode(production or development)
+module.exports = (env, options) => {
+    let production = options.mode === 'production';
+
+    //добавляет eval-sourcemap только в режиме dev
+    conf.devtool = production
+                    ? false
+                    : 'eval-sourcemap';
+
+    return conf;
+}
