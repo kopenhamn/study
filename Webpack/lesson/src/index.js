@@ -6,4 +6,5 @@ import sumIt from './some'
 console.log(sumIt(2,3,8));
 
 
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './css/style.css';

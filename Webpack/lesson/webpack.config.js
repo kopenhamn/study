@@ -1,4 +1,5 @@
-let path = require('path')
+let path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 let conf = {
     entry: './src/index.js',
@@ -14,18 +15,25 @@ let conf = {
         rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
+                loader: 'babel-loader'
                 //exclude: '/node_modules/'
             },
             {
                 test: /\.css$/,
-                use: [
+                use: ExtractTextPlugin.extract({
+                    //fallback: "style-loader",
+                    use: "css-loader"
+                })
+                /*use: [
                     'style-loader',
                     'css-loader'
-                ]
+                ]*/
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin("styles.css"),
+    ]
 };
 
 //module.exports можно настраивать на лету в зависимости от режима mode(production or development)
