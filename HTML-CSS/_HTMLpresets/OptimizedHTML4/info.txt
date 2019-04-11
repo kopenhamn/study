@@ -1,0 +1,7 @@
+video-course (ru)
+
+HTML layout by WebDesign Mater
+src: https://www.youtube.com/watch?v=vWfRHtxy81Q&t=5682s
+
+
+git clone https://github.com/agragregra/OptimizedHTML-4.git
