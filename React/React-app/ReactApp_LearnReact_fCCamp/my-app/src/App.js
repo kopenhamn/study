@@ -56,8 +56,327 @@ import Conditional from './components/Conditional'
 
 //40. Fetching data from an API (3:25:45)
 
+//41. Forms Part 1 (3:36:45) input-text
+
+//42. Forms Part 2 (3:49:00) textarea/checkbox/radio/select
+
+//43. Forms Practice (4:04:25) Travel form
+
 //-----------------CODE is here----------------------
 
+//43: Travel form
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: "",
+            lastName: "",
+            age: "",
+            gender: "",
+            location: "",
+            isVegetarian: "",
+            isKosher: "",
+            isLactoseFree: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? this.setState({[name]: checked}) : this.setState({[name]: value})
+    }
+
+    render() {
+        return (
+            <form>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={this.state.firstName}
+                    onChange={this.handleChange}
+                />
+                <br />
+                <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={this.state.lastName}
+                    onChange={this.handleChange}
+                />
+                <br />
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Age"
+                    value={this.state.age}
+                    onChange={this.handleChange}
+                />
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        onChange={this.handleChange}
+                    /> Male
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        onChange={this.handleChange}
+                    /> Female
+                </label>
+                <br />
+                <label>
+                    Location:
+                    <select
+                        name="location"
+                        value={this.state.location}
+                        onChange={this.handleChange}
+                    >
+                        <option value="Sahara Desert">Sahara Desert</option>
+                        <option value="USA">USA</option>
+                        <option value="Australia">Australia</option>
+                    </select>
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="checkbox"
+                        name="isVegetarian"
+                        checked={this.state.isVegetarian}
+                        onChange={this.handleChange}
+                    /> vegetarian?
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="checkbox"
+                        name="isKosher"
+                        checked={this.state.isKosher}
+                        onChange={this.handleChange}
+                    /> kosher?
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="checkbox"
+                        name="isLactoseFree"
+                        checked={this.state.isLactoseFree}
+                        onChange={this.handleChange}
+                    /> lactose free?
+                </label>
+
+
+                <p>First name: {this.state.firstName}</p>
+                <p>Last name: {this.state.lastName}</p>
+                <p>Age: {this.state.age}</p>
+                <p>Gender: {this.state.gender}</p>
+                <p>Location: {this.state.location}</p>
+                <p>Dietary restrictions:
+                    {this.state.isKosher ? " Kosher," : null}
+                    {this.state.isVegetarian ? " Vegetarian," : null}
+                    {this.state.isLactoseFree ? " Lactose Free": null}
+                </p>
+                <button onClick={()=>{
+                        let list = []
+
+                        if(this.state.isKosher) {
+                            list.push(" Kosher")
+                        }
+                        if (this.state.isVegetarian) {
+                            list.push(" Vegetarian")
+                        }
+                        if(this.state.isLactoseFree) {
+                            list.push(" Lactose Free")
+                        }
+
+                        console.log(list);
+                        return alert(
+                        'First name: ' + this.state.firstName +
+                        '\nLast name: ' + this.state.lastName +
+                        '\nAge: ' + this.state.age +
+                        '\nGender: ' + this.state.gender +
+                        '\nLocation: ' + this.state.location +
+                        '\nDietary restrictions: ' + list
+                    )
+                }}>Submit</button>
+            </form>
+        )
+    }
+}
+
+//-----------------CODE is here----------------------
+/*
+//42:
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            textArea: "Some default text",
+            isFriendly: true,
+            gender: "",
+            favColor: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? this.setState({[name]:checked}) : this.setState({[name]: value})
+    }
+
+    handleSubmit(event) {
+        alert(event)
+    }
+
+    render() {
+        return (
+            <form action={this.handleSubmit}>
+                <textarea
+                    name="textArea"
+                    value = {this.state.textArea}
+                    onChange = {this.handleChange}
+                />
+                <br />
+                <label>
+                    <input
+                        type="checkbox"
+                        name="isFriendly"
+                        onChange={this.handleChange}
+                        checked={this.state.isFriendly}
+                    /> is friendly?
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="male"
+                        onChange={this.handleChange}
+                        checked={this.state.gender === "male"}
+                    /> male?
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        value="female"
+                        onChange={this.handleChange}
+                        checked={this.state.gender === "female"}
+                    /> female?
+                </label>
+                //{ formik }
+
+                <br />
+                <label>
+                    Favorite color:
+                </label>
+                <select
+                    value={this.state.favColor}
+                    onChange={this.handleChange}
+                    name="favColor"
+                >
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="red">Red</option>
+                </select>
+                <h2>You are a {this.state.gender}</h2>
+                <h2>Your favorite color is: {this.state.favColor}</h2>
+                <button>Submit</button>
+            </form>
+        )
+    }
+}
+
+
+//41:
+
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: "",
+            lastName: ""
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target
+        this.setState({
+            [name]: value
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                <form method='GET'>
+                    <input
+                        type='text'
+                        value={this.state.firstName}
+                        name="firstName"
+                        placeholder="First Name"
+                        onChange={this.handleChange}
+                    />
+                    <br />
+                    <input
+                        type='text'
+                        value={this.state.lastName}
+                        name="lastName"
+                        placeholder="Last Name"
+                        onChange={this.handleChange}
+                    />
+                    <h1>{this.state.firstName} {this.state.lastName}</h1>
+                </form>
+            </div>
+        )
+    }
+}
+
+//40:
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            loading: false,
+            character: {}
+        }
+    }
+
+    componentDidMount() {
+        this.setState({loading: true})
+        fetch("https://swapi.co/api/people/1")
+        .then(response => response.json())
+        .then(data =>
+            this.setState({
+                loading: false,
+                character: data
+            })
+        )
+    }
+
+    render() {
+        const text = this.state.loading ? "loading...":this.state.character.name
+        return (
+            <div>
+                <p>{text}</p>
+            </div>
+        )
+    }
+}
+
+
+//39:
 class App extends Component {
     constructor() {
         super()
@@ -81,8 +400,7 @@ class App extends Component {
     }
 }
 
-//-----------------CODE is here----------------------
-/*
+
 
 //38:
 class App extends Component {
