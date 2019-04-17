@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/Header';
@@ -63,6 +62,11 @@ import Conditional from './components/Conditional'
 //43. Forms Practice (4:04:25) Travel form
 
 //-----------------CODE is here----------------------
+
+
+//-----------------CODE is here----------------------
+/*
+
 //43: Travel form(second try)
 class App extends Component {
     constructor() {
@@ -78,6 +82,7 @@ class App extends Component {
             lactoseFree: false
         }
         this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
@@ -86,7 +91,7 @@ class App extends Component {
         type === "checkbox" ? this.setState({[name]: checked}): this.setState({[name]: value})
     }
 
-    render() {
+    handleSubmit() {
         let list = []
         if(this.state.kosher) {
             list.push("Kosher")
@@ -97,9 +102,19 @@ class App extends Component {
         if(this.state.lactoseFree) {
             list.push("Lactose Free")
         }
+        alert(
+            "First Name: " + this.state.firstName +
+            "\nLast Name: " + this.state.lastName +
+            "\nAge: " + this.state.age +
+            "\nGender: " + this.state.gender +
+            "\nLocation: " + this.state.location +
+            "\nDietary restrictions: " + list.join(", ")
+        )
+    }
 
+    render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input
                     type="text"
                     name="firstName"
@@ -190,23 +205,12 @@ class App extends Component {
                     </label>
                 </label>
                 <br />
-                <button onClick={()=>{
-                    alert(
-                        "First Name: " + this.state.firstName +
-                        "\nLast Name: " + this.state.lastName +
-                        "\nAge: " + this.state.age +
-                        "\nGender: " + this.state.gender +
-                        "\nLocation: " + this.state.location +
-                        "\nDietary restrictions: " + list.join(", ")
-                    )
-                }}>Submit</button>
+                <button>Submit</button>
             </form>
         )
     }
 }
 
-//-----------------CODE is here----------------------
-/*
 //43: Travel form
 
 class App extends Component {
