@@ -63,7 +63,150 @@ import Conditional from './components/Conditional'
 //43. Forms Practice (4:04:25) Travel form
 
 //-----------------CODE is here----------------------
+//43: Travel form(second try)
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+            firstName: "",
+            lastName: "",
+            age: "",
+            gender: "",
+            location: "",
+            kosher: false,
+            vegetarian: false,
+            lactoseFree: false
+        }
+        this.handleChange = this.handleChange.bind(this)
+    }
 
+    handleChange(event) {
+
+        const {name, value, type, checked} = event.target
+        type === "checkbox" ? this.setState({[name]: checked}): this.setState({[name]: value})
+    }
+
+    render() {
+        let list = []
+        if(this.state.kosher) {
+            list.push("Kosher")
+        }
+        if(this.state.vegetarian) {
+            list.push("Vegetarian")
+        }
+        if(this.state.lactoseFree) {
+            list.push("Lactose Free")
+        }
+
+        return (
+            <form>
+                <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    onChange={this.handleChange}
+                    value={this.state.firstName}
+                />
+                <br />
+                <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    onChange={this.handleChange}
+                    value={this.state.lastName}
+                />
+                <br />
+                <input
+                    type="number"
+                    name="age"
+                    placeholder="Age"
+                    onChange={this.handleChange}
+                    value={this.state.age}
+                />
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        onChange={this.handleChange}
+                        value="Male"
+                    /> Male
+                </label>
+                <br />
+                <label>
+                    <input
+                        type="radio"
+                        name="gender"
+                        onChange={this.handleChange}
+                        value="Female"
+                    /> Female
+                </label>
+                <br />
+                <label>
+                    Location: <select
+                        type="checkbox"
+                        name="location"
+                        onChange={this.handleChange}
+                        value={this.state.location}
+                    >
+                        <option value="">click to choose</option>
+                        <option value="Sahara Desert">Sahara Desert</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="USA">USA</option>
+                    </select>
+                </label>
+                <br />
+                <label>
+                    Dietary restrictions:
+                    <br />
+                    <label>
+                        <input
+                            //no value parameter
+                            type="checkbox"
+                            name="kosher"
+                            onChange={this.handleChange}
+                            checked={this.state.kosher}
+                        /> Kosher?
+                    </label>
+                    <br />
+                    <label>
+                        <input
+                            //no value parameter
+                            type="checkbox"
+                            name="vegetarian"
+                            onChange={this.handleChange}
+                            checked={this.state.vegetarian}
+                        /> Vegetarian?
+                    </label>
+                    <br />
+                    <label>
+                        <input
+                            //no value parameter
+                            type="checkbox"
+                            name="lactoseFree"
+                            onChange={this.handleChange}
+                            checked={this.state.lactoseFree}
+                        /> Lactose free?
+                    </label>
+                </label>
+                <br />
+                <button onClick={()=>{
+                    alert(
+                        "First Name: " + this.state.firstName +
+                        "\nLast Name: " + this.state.lastName +
+                        "\nAge: " + this.state.age +
+                        "\nGender: " + this.state.gender +
+                        "\nLocation: " + this.state.location +
+                        "\nDietary restrictions: " + list.join(", ")
+                    )
+                }}>Submit</button>
+            </form>
+        )
+    }
+}
+
+//-----------------CODE is here----------------------
+/*
 //43: Travel form
 
 class App extends Component {
@@ -211,8 +354,7 @@ class App extends Component {
     }
 }
 
-//-----------------CODE is here----------------------
-/*
+
 //42:
 
 class App extends Component {
