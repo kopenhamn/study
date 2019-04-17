@@ -67,6 +67,20 @@ import Form from './components/FormContainer'
 //45. Meme Generator Capstone Project (4:36:10)
 import MemeGenerator from './components/MemeGenerator.js'
 
+//46. Writing Modern React Apps (4:56:25)
+
+//47. Project Ideas for Practicing (5:02:35)
+
+/**
+
+*   https://medium.freecodecamp.org/every-time-you-build-a-to-do-list-app-a-puppy-dies-505b54637a5d
+*   https://medium.freecodecamp.org/want-to-build-something-fun-heres-a-list-of-sample-web-app-ideas-b991bce0ed9a
+*   https://medium.freecodecamp.org/summer-is-over-you-should-be-coding-heres-yet-another-list-of-exciting-ideas-to-build-a95d7704d36d
+
+*/
+
+//48. Conclusion (5:03:25)
+
 //-----------------CODE is here----------------------
 
 class App extends Component {
