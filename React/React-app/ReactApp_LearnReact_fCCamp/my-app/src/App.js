@@ -61,11 +61,42 @@ import Conditional from './components/Conditional'
 
 //43. Forms Practice (4:04:25) Travel form
 
+//44. Container/Component Architecture (4:24:45)
+import Form from './components/FormContainer'
+
+//45. Meme Generator Capstone Project (4:36:10)
+import MemeGenerator from './components/MemeGenerator.js'
+
 //-----------------CODE is here----------------------
 
+class App extends Component {
+    constructor() {
+        super()
+        this.state = {
+
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <Header />
+                <MemeGenerator />
+            </div>
+        )
+    }
+}
 
 //-----------------CODE is here----------------------
 /*
+//44:
+
+function App() {
+    return (
+        <Form />
+    )
+}
+
 
 //43: Travel form(second try)
 class App extends Component {
@@ -143,6 +174,7 @@ class App extends Component {
                     <input
                         type="radio"
                         name="gender"
+                        checked={this.state.gender === "Male"}
                         onChange={this.handleChange}
                         value="Male"
                     /> Male
@@ -152,24 +184,26 @@ class App extends Component {
                     <input
                         type="radio"
                         name="gender"
+                        checked={this.state.gender === "Female"}
                         onChange={this.handleChange}
                         value="Female"
                     /> Female
                 </label>
                 <br />
                 <label>
-                    Location: <select
-                        type="checkbox"
-                        name="location"
-                        onChange={this.handleChange}
-                        value={this.state.location}
-                    >
-                        <option value="">click to choose</option>
-                        <option value="Sahara Desert">Sahara Desert</option>
-                        <option value="Ukraine">Ukraine</option>
-                        <option value="USA">USA</option>
-                    </select>
+                    Location:
                 </label>
+                <select
+                    type="checkbox"
+                    name="location"
+                    onChange={this.handleChange}
+                    value={this.state.location}
+                >
+                    <option value="">--click to choose</option>
+                    <option value="Sahara Desert">Sahara Desert</option>
+                    <option value="Ukraine">Ukraine</option>
+                    <option value="USA">USA</option>
+                </select>
                 <br />
                 <label>
                     Dietary restrictions:
