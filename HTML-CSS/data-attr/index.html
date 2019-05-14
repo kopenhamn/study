@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Data Attribute</title>
+    <style>
+        .sprite {
+            background: url(./player.png);
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 50px;
+            left: 50px;
+            background-size: cover;
+        }
+        .sprite::after {
+            content: attr(data-score);
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+        }
+        .sprite:hover::after {
+            opacity: 1;
+        }
+        .sprite[data-score='10']:hover::after {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div
+        class="sprite"
+        data-score=100
+    ></div>
+    <script type="text/javascript">
+        const char = document.querySelector('.sprite');
+        char.dataset.score = 10;
+    </script>
+</body>
+</html>
