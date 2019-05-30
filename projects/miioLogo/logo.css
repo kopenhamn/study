@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: Helvetica, Tahoma, sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  color: #444;
+  background: #ecf0f1; }
+  body #wrapper {
+    box-sizing: border-box;
+    position: absolute;
+    width: 200px;
+    height: 110px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #444;
+    box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.8); }
+    body #wrapper .logo {
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      justify-content: center; }
+      body #wrapper .logosecond {
+        background: #000;
+        color: #fff; }
+      body #wrapper .logo .M {
+        position: relative; }
+      body #wrapper .logo .I {
+        position: relative;
+        top: 17px;
+        width: 15px;
+        height: 75px;
+        margin-right: 2px; }
+        body #wrapper .logo .I.first {
+          margin-right: 7px; }
+          body #wrapper .logo .I.first .tItem {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 15px;
+            height: 15px;
+            margin-bottom: 3px;
+            background: #444;
+            transition: all 0.8s ease; }
+          body #wrapper .logo .I.first .bItem {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 15px;
+            height: 54px;
+            background: #444;
+            transition: all 0.1s ease; }
+        body #wrapper .logo .I.second .tItem {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 15px;
+          height: 15px;
+          background: #444;
+          transition: all 1s ease; }
+        body #wrapper .logo .I.second .bItem {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          width: 15px;
+          height: 54px;
+          background: #444;
+          transition: all 0.3s ease; }
+      body #wrapper .logo .O {
+        position: relative; }

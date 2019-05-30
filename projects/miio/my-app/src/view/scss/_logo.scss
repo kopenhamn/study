@@ -1,0 +1,79 @@
+.logo {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+
+    &second {
+        background: #000;
+        color: #fff;
+    }
+
+    .M {
+        position: relative;
+    }
+
+    .I {
+        position: relative;
+        top: 17px;
+        width: 15px;
+        height: 75px;
+        margin-right: 2px;
+
+
+        &.first {
+            margin-right: 7px;
+
+            .tItem {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                margin-bottom: 3px;
+                background: $mainColor;
+                transition: all 0.8s ease;
+            }
+
+            .bItem {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 15px;
+                height: 54px;
+                background: $mainColor;
+                transition: all 0.1s ease;
+            }
+        }
+
+        &.second {
+
+            .tItem {
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 15px;
+                height: 15px;
+                background: $mainColor;
+                transition: all 1s ease;
+            }
+
+            .bItem {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 15px;
+                height: 54px;
+                background: $mainColor;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+
+    .O {
+        position: relative;
+    }
+}

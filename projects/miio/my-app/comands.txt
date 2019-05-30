@@ -1,0 +1,7 @@
+cd /Users/admin/Data/WebDev/GitHub/Projects/kopenhamn/studyProjects/miio/my-app
+npm start
+
+
+cd /Users/admin/Data/WebDev/GitHub/Projects/kopenhamn/studyProjects/miio/my-app/src/view
+sass --watch sass:css --no-
+cache --sourcemap=none

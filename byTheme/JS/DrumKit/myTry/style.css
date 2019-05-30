@@ -7,6 +7,8 @@ body {
     font-family: "Open Sans";
 }
 
+
+
 .container {
     width: 100vw;
     height: 100vh;
@@ -38,7 +40,7 @@ body {
     justify-content: center;
     border: 3px solid rgb(61, 61, 61);
     border-radius: 3px;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .playing {

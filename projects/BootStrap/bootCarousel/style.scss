@@ -1,0 +1,16 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+#cover {
+    height: 100%;
+    position: relative;
+}
+#carouselExampleIndicators {
+    border: 3px solid green;
+}
+
+img {
+    max-width: 100%;
+}
