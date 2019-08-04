@@ -1,0 +1,17 @@
+<div style='width: 80vw; margin:auto; text-align: center; display: flex; flex-wrap: wrap; justify-content: space-between'>
+    <div style='width: 47%'>
+        <label for="name">Name: </label>
+        <input style='width: 100%' type="text" id="name">
+    </div>
+    <div style='width: 47%'>
+        <label for="password">Password: </label>
+        <select style='width: 100%' id="password">
+            <option value="" disabled>choose...</option>
+            <option value="" *ngFor='let crypto of top100cryptos'>{{crypto.name}}</option>
+        </select>
+    </div>
+    <div style='width: 100%'>
+        <label for="comments">Comments: </label>
+        <textarea style='width: 100%' id="comments" cols="18" rows="2"></textarea> 
+    </div>
+</div>
