@@ -65,6 +65,13 @@ div, span, p, td {
     direction: ltr;
     unicode-bidi: normal;
 }
+
+.logo {
+    width: 240px;
+    height: 54.61px;
+    margin-bottom: 20.39px;
+}
+
 input[type=text], input[type=password] {
     height: 30px;
     line-height: 1em;
