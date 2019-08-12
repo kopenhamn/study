@@ -1,0 +1,409 @@
+html {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    color: #333333;
+    font-family: Arial, helvetica, sans-serif;
+    font-size: 14px;
+    min-height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+h1 {
+    font: normal 32px/38px "Custom Font", Arial, Helvetica, sans-serif;
+    margin: 0 0 20px;
+    color: #37809f;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+b, strong {
+    font-weight: 700;
+}
+
+a {
+    color: #37809f;
+    text-decoration: underline;
+}
+a:link,
+a:visited {
+    color: #37809f;
+}
+
+a:hover {
+    color: #37809f;
+    text-decoration: none;
+}
+
+a:active {
+    color: #37809f;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div, span, p, td {
+    direction: ltr;
+    unicode-bidi: normal;
+}
+input[type=text], input[type=password] {
+    height: 30px;
+    line-height: 1em;
+    font-size: 14px;
+    padding: 0 8px;
+    border: 1px solid #cccccc;
+    background: white;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #37809f;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+    display: inline-block;
+    width: 100%;
+}
+
+input[type=text].xs-small, input[type=password].xs-small {
+    height: 26px;
+}
+
+input[type=text].extra-small {
+    height: 21px;
+}
+
+input[type=text].xs-big, input[type=password].xs-big,
+.xs-big input[type=text], .xs-big input[type=password] {
+    height: 40px;
+}
+
+input[type=text], input[type=password], textarea {
+    /*test style for remove shadow (ipad)*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+textarea:focus, input[type=text]:focus, input[type=password]:focus {
+    border-color: #37809f;
+    outline: 0;
+    outline: thin dotted \9 ;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(55, 128, 159, 0.2);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(55, 128, 159, 0.2);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(55, 128, 159, 0.2);
+}
+
+/*autofill input*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: color 9999s ease-out, background-color 9999s ease-out !important;
+    transition-delay: 99999s;
+}
+
+input[type=radio], input[type=checkbox], input[type=radio]:active, input[type=checkbox]:active, input[type=checkbox]:focus, input[type=radio]:focus {
+    height: 14px;
+    width: 14px;
+    outline: 0 !important;
+    -moz-appearance: 0;
+    -webkit-appearance: 0;
+    -o-appearance: 0;
+}
+
+ul{
+    margin:0;
+    padding: 0;
+}
+li {
+    list-style-type: none;
+}
+
+
+.btn, input.btn {
+    font: bold 14px/20px Arial, Helvetica, sans-serif;
+    height: 34px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: #37809f;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    text-shadow: none;
+    text-decoration: none;
+    border: 1px solid #37809f;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 6px 10px;
+    margin: 0;
+}
+
+.btn:active {
+    background-image: none;
+    outline: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(55, 128, 159, 0.125);
+    box-shadow: inset 0 3px 5px rgba(55, 128, 159, 0.125);
+}
+
+a.btn:not(.trt):link, a.btn:not(.trt):visited {
+    color: white;
+}
+
+.btn:focus, input.btn:focus {
+    outline: none;
+    border: 1px solid inherit;
+}
+
+.btn:hover,
+input.btn:hover {
+    background: #3a92b1;
+    color: white;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.btn-small, input.btn.btn-small {
+    padding: 4px 10px;
+    height: 30px;
+}
+
+.btn.btn-s-small, input.btn.btn-s-small {
+    padding: 0 9px;
+    height: auto;
+    font-size: 13px;
+    vertical-align: top;
+    line-height: 28px;
+}
+
+.btn.btn-xs-small, input.btn.btn-xs-small {
+    padding: 0 8px;
+    height: 26px;
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+    border-radius: 4px;
+}
+
+.btn.btn-extra-small, input.btn.btn-extra-small {
+    padding: 0 5px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: normal;
+    border-radius: 3px;
+}
+
+.btn.gray, input.btn.gray {
+    background: #999999;
+    border: 1px solid #cccccc;
+    color: rgba(51, 51, 51, 0.75);
+    font-weight: normal;
+}
+
+.btn.gray:hover, input.btn.gray:hover {
+    background: #bbbbbb;
+    border-color: #bbbbbb;
+    color: #333333;
+}
+
+.btn.gray.trt, input.btn.gray.trt {
+    background: white;
+    border-color: #cccccc;
+    color: rgba(51, 51, 51, 0.75);
+}
+
+.btn.green, input.btn.green {
+    background-color: #62A078 !important;
+    border-color: #62A078 !important;
+    color: white;
+}
+
+.btn.green.trt, input.btn.green.trt {
+    background: white !important;
+    color: #009957;
+}
+
+.btn.green:hover, input.btn.green:hover {
+    background-color: #009957 !important;
+    border-color: #009957 !important;
+    color: white;
+}
+
+.btn.green.trt, input.btn.green.trt {
+    background: white;
+    color: #009957;
+}
+
+.btn.green.trt .fa {
+    color: #009957;
+}
+
+.btn.trt, input.btn.trt {
+    color: #37809f;
+    border-color: #37809f;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.btn.trt.hover,
+.btn.trt:hover, input.btn.trt:hover, .title2 .btn.trt:hover {
+    background-color: #37809f;
+    border-color: #37809f;
+    color: white;
+    z-index: 3;
+}
+
+a.help_link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 8px;
+    font-size: 13px;
+    line-height: 24px;
+    border: 1px solid rgba(55,55,55, 0.5);
+    border-radius: 2px;
+    color: #333;
+}
+
+.help_link .fa {
+    margin-right: 5px;
+    font-size: 16px;
+    position: relative;
+    color: inherit;
+    top: 1px;
+}
+
+a.help_link:hover{
+    opacity: 0.7;
+}
+
+.help_link.pos_tr_corner {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.center-flexbox-wrapp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+}
+
+.light-content-block {
+    padding: 25px;
+    border: 1px solid rgba(204, 204, 204, 0.4);
+    border-radius: 2px;
+    display: inline-block;
+    background-color: white;
+}
+.light-content-block ul.form-grid {
+    margin: 0 auto;
+}
+.light-content-block ul.form-grid li {
+    margin-bottom: 10px;
+}
+.light-content-block ul.form-grid li input[type=text],
+.light-content-block ul.form-grid li input[type=password] {
+    text-align: inherit;
+}
+.light-content-block ul.form-grid li input[type=text]::-webkit-input-placeholder,
+.light-content-block ul.form-grid li input[type=password]::-webkit-input-placeholder {
+    letter-spacing: normal;
+    color: rgba(51, 51, 51, 0.5);
+}
+.light-content-block ul.form-grid li input[type=text]::-moz-placeholder,
+.light-content-block ul.form-grid li input[type=password]::-moz-placeholder {
+    letter-spacing: normal;
+    color: rgba(51, 51, 51, 0.5);
+}
+.light-content-block ul.form-grid li input[type=text]:-moz-placeholder,
+.light-content-block ul.form-grid li input[type=password]:-moz-placeholder {
+    letter-spacing: normal;
+    color: rgba(51, 51, 51, 0.5);
+}
+.light-content-block ul.form-grid li input[type=text]:-ms-input-placeholder,
+.light-content-block ul.form-grid li input[type=password]:-ms-input-placeholder {
+    letter-spacing: normal;
+    color: rgba(51, 51, 51, 0.5);
+}
+.light-content-block ul.form-grid li input[type=password] {
+    letter-spacing: 3px;
+}
+.light-content-block ul.form-grid label {
+    font-weight: 400;
+    margin: 0;
+}
+.light-content-block ul.form-grid .btn {
+    border-radius: 4px;
+}
+
+.wo_underline {
+    text-decoration: none;
+}
+
+a.wo_underline:not(.hover_line):hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+a.wo_underline:hover {
+    text-decoration: underline;
+}
+
+.full-width-btn .btn {
+    width: 100%;
+}
+
+
+.cAlignment{
+    text-align: center;
+}
+.pl-45{
+    padding-left: 45px;
+}
+.pr-45{
+    padding-right: 45px;
+}
+.pt-15{
+    padding-top: 15px;
+}
+.mb-0{
+    margin-bottom: 0;
+}
+.mb-30{
+    margin-bottom: 30px;
+}
+.mt-10{
+    margin-top:10px;
+}
+.fix-width-200{
+    width: 200px;
+}
