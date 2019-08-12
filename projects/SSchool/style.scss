@@ -1,0 +1,240 @@
+$mainColor: rgb(170, 0, 185);
+$secondColor: #444;
+
+.YELLOW {
+    border: 1px yellow solid;
+}
+
+.RED {
+    border: 1px red solid;
+}
+
+.BLUE {
+    border: 1px blue solid;
+}
+
+.MAIN {
+    border: 1px $mainColor solid;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $secondColor;
+    font-weight: lighter;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    background: #ccc;
+    width: 100%;
+    height: 100%;
+
+    .fullScreen {
+        min-height: 100vh;
+    }
+
+    .fs-lg {
+        font-size: 30px;
+    }
+
+    .fs-md {
+        font-size: 20px;
+    }
+
+    .button {
+        border: 2px $mainColor solid;
+        padding: 10px 50px;
+        border-radius: 3px;
+        color: $mainColor;
+
+        &:hover {
+            border: 2px #ccc solid;
+            color: $mainColor;
+            text-decoration: none;
+        }
+    }
+
+    .mCol {
+        color: $mainColor;
+    }
+
+    .mBg {
+        background: $mainColor;
+    }
+
+    .center-it {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    a {
+        color: #fff;
+
+        &:hover {
+            text-decoration: none;
+            color: $mainColor;
+        }
+    }
+
+    hr {
+        width: 70px;
+        background: $mainColor;
+        margin: 20px auto;
+    }
+
+    nav {
+        &#navbar {
+            top: -100px;
+            transition: top 1s ease-out;
+            background: rgba(60, 60, 60, 0.8);
+            padding: 0;
+
+            li {
+                a {
+                    font-weight: 100;
+                    padding: 12px 10px;
+                    font-size: 14px;
+
+                    &.active {
+                        color: $mainColor;
+                        background: rgba(44, 44, 44, 0.7);
+                    }
+                }
+            }
+        }
+    }
+
+    .topSlide {
+        height: 100vh;
+        min-height: 500px;
+
+        img {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .overlay {
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: rgba(41, 41, 41, 0.8);
+        }
+
+        .topInfo {
+            z-index: 2;
+
+            .logo {
+                border: 2px $mainColor solid;
+                font-size: 50px;
+                border-radius: 5px;
+                width: 220px;
+            }
+
+            .about {
+
+                .aboutInfo {
+
+                    a {
+                        text-decoration: none;
+
+                        &.hov:hover {
+                            color: $mainColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .aboutSlide {
+        background: rgb(241, 241, 241);
+        min-height: 500px;
+    }
+
+    .opoSlide {
+        background: rgb(228, 228, 228);
+        min-height: 500px;
+
+        .thirdInfo {
+        }
+    }
+
+    .dataSlide {
+        background: rgb(26, 26, 26);
+        min-height: 220px;
+    }
+
+    .shotSlide {
+        background: rgb(241, 241, 241);
+    }
+
+    .loadSlide {
+        background: rgb(26, 26, 26);
+
+        .load-zone {
+            background: rgb(36, 36, 36);
+
+            .load-it {
+                min-height: 220px;
+                padding: 0;
+
+                .brand-icon {
+                    background: rgb(26, 26, 26);
+                    border: 1px solid rgb(36, 36, 36);
+                    opacity: 1;
+                    transition: 1s opacity ease-out;
+                    margin-left: -100%;
+
+
+                    &:hover {
+                        opacity: 0;
+                        transition: 1s opacity ease-out;
+                    }
+                }
+            }
+        }
+    }
+
+    .contactSlide {
+        background: rgb(241, 241, 241);
+        min-height: 500px;
+
+        .btn {
+            margin: auto;
+
+            &:hover {
+                color: $mainColor;
+                border: 1px solid $mainColor;
+            }
+        }
+    }
+
+    footer {
+        background: rgb(26, 26, 26);
+        height: 60px;
+
+        span {
+            color: $mainColor
+        }
+
+        a {
+            color: $secondColor;
+
+            &:hover {
+                color: $mainColor;
+                text-decoration: none;
+            }
+        }
+    }
+}

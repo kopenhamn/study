@@ -1,0 +1,143 @@
+.YELLOW {
+  border: 1px yellow solid; }
+
+.RED {
+  border: 1px red solid; }
+
+.BLUE {
+  border: 1px blue solid; }
+
+.MAIN {
+  border: 1px #aa00b9 solid; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #444;
+  font-weight: lighter;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif; }
+
+body {
+  background: #ccc;
+  width: 100%;
+  height: 100%; }
+  body .fullScreen {
+    min-height: 100vh; }
+  body .fs-lg {
+    font-size: 30px; }
+  body .fs-md {
+    font-size: 20px; }
+  body .button {
+    border: 2px #aa00b9 solid;
+    padding: 10px 50px;
+    border-radius: 3px;
+    color: #aa00b9; }
+    body .button:hover {
+      border: 2px #ccc solid;
+      color: #aa00b9;
+      text-decoration: none; }
+  body .mCol {
+    color: #aa00b9; }
+  body .mBg {
+    background: #aa00b9; }
+  body .center-it {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  body a {
+    color: #fff; }
+    body a:hover {
+      text-decoration: none;
+      color: #aa00b9; }
+  body hr {
+    width: 70px;
+    background: #aa00b9;
+    margin: 20px auto; }
+  body nav#navbar {
+    top: -100px;
+    transition: top 1s ease-out;
+    background: rgba(60, 60, 60, 0.8);
+    padding: 0; }
+    body nav#navbar li a {
+      font-weight: 100;
+      padding: 12px 10px;
+      font-size: 14px; }
+      body nav#navbar li a.active {
+        color: #aa00b9;
+        background: rgba(44, 44, 44, 0.7); }
+  body .topSlide {
+    height: 100vh;
+    min-height: 500px; }
+    body .topSlide img {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0; }
+    body .topSlide .overlay {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      background: rgba(41, 41, 41, 0.8); }
+    body .topSlide .topInfo {
+      z-index: 2; }
+      body .topSlide .topInfo .logo {
+        border: 2px #aa00b9 solid;
+        font-size: 50px;
+        border-radius: 5px;
+        width: 220px; }
+      body .topSlide .topInfo .about .aboutInfo a {
+        text-decoration: none; }
+        body .topSlide .topInfo .about .aboutInfo a.hov:hover {
+          color: #aa00b9; }
+  body .aboutSlide {
+    background: #f1f1f1;
+    min-height: 500px; }
+  body .opoSlide {
+    background: #e4e4e4;
+    min-height: 500px; }
+  body .dataSlide {
+    background: #1a1a1a;
+    min-height: 220px; }
+  body .shotSlide {
+    background: #f1f1f1; }
+  body .loadSlide {
+    background: #1a1a1a; }
+    body .loadSlide .load-zone {
+      background: #242424; }
+      body .loadSlide .load-zone .load-it {
+        min-height: 220px;
+        padding: 0; }
+        body .loadSlide .load-zone .load-it .brand-icon {
+          background: #1a1a1a;
+          border: 1px solid #242424;
+          opacity: 1;
+          transition: 1s opacity ease-out;
+          margin-left: -100%; }
+          body .loadSlide .load-zone .load-it .brand-icon:hover {
+            opacity: 0;
+            transition: 1s opacity ease-out; }
+  body .contactSlide {
+    background: #f1f1f1;
+    min-height: 500px; }
+    body .contactSlide .btn {
+      margin: auto; }
+      body .contactSlide .btn:hover {
+        color: #aa00b9;
+        border: 1px solid #aa00b9; }
+  body footer {
+    background: #1a1a1a;
+    height: 60px; }
+    body footer span {
+      color: #aa00b9; }
+    body footer a {
+      color: #444; }
+      body footer a:hover {
+        color: #aa00b9;
+        text-decoration: none; }

@@ -1,0 +1,401 @@
+/*$secondColorA: rgba(rgb(241, 221, 37), 0.5);
+
+
+// GREY-YELLOW
+
+$mainColor: #444;
+$secondColor: rgb(150, 146, 11);
+$secondColorA: rgba(150, 146, 11, 0.8);
+*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, helvetica, arial, sans-serif;
+  letter-spacing: 1.5px;
+  color: #444; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  padding: 0; }
+  body #container {
+    box-sizing: border-box;
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative; }
+  body .bold {
+    font-weight: bold; }
+  body .mainColLight {
+    color: #666; }
+  body.homeBody #homeBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  body.homeBody .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 0; }
+  body.about #aboutBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  body.about .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    min-height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 0; }
+  body.projects #projectsBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  body.projects .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 0; }
+  body.contact #contactBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; }
+  body.contact .overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: 0; }
+  body header {
+    position: relative;
+    top: 0;
+    left: 0; }
+    body header.reduce .headLine {
+      width: 0%;
+      transition: all 0.5s ease-out; }
+    body header .logo {
+      position: relative;
+      min-width: 570px;
+      height: 160px;
+      color: #fff;
+      margin: 30px;
+      padding: 15px;
+      background: rgba(247, 208, 0, 0.5);
+      transition: all 2s ease-out; }
+      body header .logo a {
+        text-decoration: none; }
+        body header .logo a h1 {
+          letter-spacing: 5px;
+          font-size: 95px;
+          text-align: center;
+          margin-bottom: 5px;
+          color: #fff; }
+          body header .logo a h1 span {
+            font-size: 110px; }
+        body header .logo a p {
+          position: absolute;
+          bottom: 10px;
+          padding-left: 25px;
+          border: 1px solid #fff;
+          font-size: 17px;
+          letter-spacing: 24px;
+          color: #fff; }
+    body header#aboutHeader {
+      height: 56px;
+      position: relative;
+      top: 0;
+      left: 0; }
+      body header#aboutHeader .logo {
+        text-align: left;
+        position: absolute;
+        z-index: 3;
+        margin: 0;
+        top: 0;
+        left: 50%;
+        transform: scale(0.3) translateX(-50%);
+        transform-origin: top left;
+        background: rgba(247, 208, 0, 0.5);
+        transition: all 2s ease-out; }
+        body header#aboutHeader .logo.reduce {
+          left: 0;
+          transform: scale(0.3) translateX(0);
+          transform-origin: top left; }
+    body header .headLine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 57px;
+      background: rgba(68, 68, 68, 0.2);
+      transition: all 0.5s ease-out;
+      z-index: 2; }
+    body header .menu-btn {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      margin: 20px;
+      z-index: 3;
+      transition: all 0.5s ease-out; }
+      body header .menu-btn:hover {
+        cursor: pointer; }
+      body header .menu-btn .btnLine {
+        width: 35px;
+        height: 3px;
+        background: #fff;
+        margin-bottom: 5px; }
+      body header .menu-btn.close {
+        transform: rotate(180deg);
+        transition: all 0.5s ease-out; }
+        body header .menu-btn.close .btnLine:nth-child(1) {
+          transform: rotate(45deg) translate(8px, 7px); }
+        body header .menu-btn.close .btnLine:nth-child(2) {
+          visibility: hidden; }
+        body header .menu-btn.close .btnLine:nth-child(3) {
+          transform: rotate(-45deg) translate(4px, -3px); }
+    body header .menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      min-width: 280px;
+      width: 30%;
+      height: 100%;
+      text-align: center;
+      background: rgba(68, 68, 68, 0.2);
+      display: flex;
+      font-weight: normal;
+      text-transform: uppercase;
+      justify-content: center;
+      flex-direction: column;
+      transform: translate3d(100%, 0, 0);
+      z-index: 2;
+      transition: all 0.5s ease-out; }
+      body header .menu ul {
+        list-style: none; }
+        body header .menu ul li {
+          font-size: 40px;
+          padding: 15px; }
+          body header .menu ul li a {
+            text-decoration: none;
+            color: #fff;
+            letter-spacing: 1.5px; }
+            body header .menu ul li a.current {
+              color: #444;
+              transition: all 0.5s ease-out; }
+              body header .menu ul li a.current:hover {
+                color: #fff;
+                transition: all 0.5s ease-out; }
+            body header .menu ul li a:hover {
+              color: #444;
+              transition: all 0.5s ease-out; }
+      body header .menu.show {
+        display: flex;
+        transform: translate3d(0, 0, 0);
+        transition: all 0.5s ease-out; }
+    body header#homeHeader {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      transition: all 2s ease-out; }
+      body header#homeHeader.reduce {
+        width: 70%;
+        transition: all 2s ease-out; }
+  body main {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    transition: all 2s ease-out; }
+    body main.reduce {
+      left: -30%;
+      transition: all 0.5s ease-out; }
+    body main h1 {
+      text-align: right;
+      margin-top: 80px;
+      font-weight: normal;
+      font-size: 60px;
+      letter-spacing: 5px; }
+      body main h1 span {
+        color: #f7d000; }
+    body main section {
+      box-sizing: border-box;
+      width: 50%;
+      float: right;
+      line-height: 1.5; }
+      body main section h2 {
+        font-weight: normal;
+        border-bottom: 1px solid #f7d000;
+        margin: 50px 0 20px 0; }
+      body main section .bio p {
+        margin: 10px;
+        font-size: 16px; }
+      body main section .staf .wrapper {
+        box-sizing: border-box;
+        letter-spacing: 1.5px;
+        line-height: 30px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center; }
+        body main section .staf .wrapper .team-member {
+          position: relative;
+          margin: 5px;
+          text-align: center;
+          font-size: 16px; }
+          body main section .staf .wrapper .team-member p {
+            background: #444;
+            color: #fff; }
+          body main section .staf .wrapper .team-member img {
+            width: 200px; }
+          body main section .staf .wrapper .team-member .mailMe {
+            box-sizing: border-box;
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            top: 0;
+            left: 0;
+            padding-top: 80px;
+            opacity: 0;
+            transition: all 0.5s ease-out; }
+            body main section .staf .wrapper .team-member .mailMe:hover {
+              opacity: 0.8;
+              background: #fff;
+              color: #444;
+              transition: all 0.5s ease-out; }
+    body main .projects {
+      box-sizing: border-box;
+      width: 100%;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center; }
+      body main .projects .myProject {
+        width: 310px;
+        height: 230px;
+        background: url("../img/proOverlay.jpg");
+        background-size: cover;
+        position: relative;
+        margin: 10px; }
+        body main .projects .myProject img {
+          width: 310px;
+          height: 230px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          z-index: 1;
+          transition: all 0.5s ease-out; }
+          body main .projects .myProject img:hover {
+            opacity: 0;
+            transition: all 0.5s ease-out; }
+        body main .projects .myProject p {
+          position: absolute;
+          bottom: 8px;
+          left: 16px; }
+    body main .contactInfo {
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      letter-spacing: 1.5px;
+      line-height: 30px;
+      padding: 0 5%; }
+      body main .contactInfo .address {
+        border-top: 1px solid #444;
+        width: 48%; }
+        body main .contactInfo .address a {
+          text-decoration: none; }
+      body main .contactInfo .mailList {
+        border-top: 1px solid #444;
+        width: 48%; }
+        body main .contactInfo .mailList a {
+          text-decoration: none; }
+  body .pusher {
+    width: 100%;
+    height: 50px;
+    clear: both; }
+  body footer {
+    box-sizing: border-box;
+    background-color: rgba(68, 68, 68, 0.1);
+    width: 100%;
+    text-align: right;
+    padding: 5px 6%;
+    position: absolute;
+    bottom: 0; }
+
+@media only screen and (max-width: 600px) {
+  body.about .overlay, body.contact .overlay, body.projects .overlay {
+    background: rgba(255, 255, 255, 0.9); }
+  body header#homeHeader.reduce {
+    width: 100%; }
+  body header#homeHeader .logo {
+    top: 10vh;
+    margin: 0;
+    transform: scale(0.6) translateX(0);
+    transform-origin: top center;
+    transition: all 2s ease-out; }
+    body header#homeHeader .logo.reduce {
+      top: 3px;
+      margin: 0;
+      transition: all 2s ease-out; }
+  body header#aboutHeader .logo.reduce {
+    top: 3px;
+    margin: 0;
+    left: 50%;
+    transform: scale(0.6) translateX(-50%); }
+  body header .menu {
+    width: 100%; }
+  body main.reduce {
+    left: -100%;
+    transition: all 0.5s ease-out; }
+  body main section {
+    width: 100%;
+    padding: 0 20px; }
+  body main .projects {
+    box-sizing: border-box;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+    body main .projects .myProject {
+      width: 90vw;
+      height: 50vh;
+      margin: 10px auto; }
+      body main .projects .myProject img {
+        width: 100%;
+        height: 100%;
+        transition: opacity 1s ease; }
+        body main .projects .myProject img:hover {
+          transition: opacity 1s ease; }
+  body main .contactInfo {
+    flex-direction: column;
+    margin: auto; }
+    body main .contactInfo .address {
+      width: 100%;
+      margin-bottom: 40px; }
+    body main .contactInfo .mailList {
+      width: 100%; } }

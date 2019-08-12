@@ -1,0 +1,24 @@
+//Color Sets
+
+// GREY-YELLOW
+
+$mainColor: #444;
+$secondColor: rgb(247, 208, 0);
+/*$secondColorA: rgba(rgb(241, 221, 37), 0.5);
+
+
+// GREY-YELLOW
+
+$mainColor: #444;
+$secondColor: rgb(150, 146, 11);
+$secondColorA: rgba(150, 146, 11, 0.8);
+*/
+
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+@mixin easeOutLong {
+    transition: all 2s ease-out;
+}
