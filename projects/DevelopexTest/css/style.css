@@ -72,6 +72,19 @@ div, span, p, td {
     margin-bottom: 20.39px;
 }
 
+.input-container {
+    position: relative;
+}
+
+.form-grid i.icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    color: #37809f;
+    font-size: 20px;
+}
+
 input[type=text], input[type=password] {
     height: 30px;
     line-height: 1em;
