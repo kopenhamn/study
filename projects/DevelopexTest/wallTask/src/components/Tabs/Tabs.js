@@ -22,7 +22,6 @@ export class Tabs extends React.Component {
             isActive={this.isActive(tab.id)}
             onActiveTab={() => this.setActiveTab(tab.id)}
         />);
-        console.log(this.state);
 
         return (
             <ul className="manage-block__tabs">
