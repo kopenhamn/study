@@ -5,6 +5,8 @@ import './styles.scss'
 
 export function ManageBlock() {
     return (
-        <Tabs />
+        <div className='manage-block'>
+            <Tabs />
+        </div>
     )
 }
