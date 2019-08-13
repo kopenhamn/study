@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import EventFooter from 'components/EventFooter';
+import NoteContent from 'components/NoteContent';
+import NoteFooter from 'components/NoteFooter';
 
 import './styles.scss';
 
@@ -19,10 +20,8 @@ export class NoteBlock extends React.Component {
     render() {
         return (
             <div className='note-block'>
-                <div>
-                    EventContent
-                </div>
-                <EventFooter />
+                <NoteContent />
+                <NoteFooter />
             </div>
         );
     }
