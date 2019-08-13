@@ -7,12 +7,9 @@
     line-height: 21px;
     color: $grey;
     margin-right: 30px;
+    cursor: pointer;
 
     &.active {
         color: $blue;
-    }
-
-    i {
-        margin-right: 5px;
     }
 }
