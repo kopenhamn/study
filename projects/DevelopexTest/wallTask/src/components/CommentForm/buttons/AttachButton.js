@@ -8,7 +8,7 @@ export function AttachButton(props) {
             onClick={props.attach}
             className='form_btn'
         >
-            <i class="fa fa-paperclip"></i>
+            <i className="fa fa-paperclip"></i>
             Attach
         </button>
     )
