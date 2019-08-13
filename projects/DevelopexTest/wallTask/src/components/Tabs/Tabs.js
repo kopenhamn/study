@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Tab } from './Tab/Tab';
 import { panes } from './tabs.conf';
+
 import './styles.scss'
 
 export class Tabs extends React.Component {
@@ -24,7 +25,7 @@ export class Tabs extends React.Component {
         console.log(this.state);
 
         return (
-            <ul className="navigation">
+            <ul className="manage-block__tabs">
                 { tabs }
             </ul>
         )
