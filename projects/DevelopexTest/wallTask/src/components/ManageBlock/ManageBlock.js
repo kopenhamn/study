@@ -1,10 +1,14 @@
 import React from 'react';
 
 import Tabs from 'components/Tabs';
+import CommentForm from 'components/CommentForm'
 import './styles.scss'
 
 export function ManageBlock() {
     return (
-        <Tabs />
+        <div className='manage-block'>
+            <Tabs />
+            <CommentForm />
+        </div>
     )
 }
