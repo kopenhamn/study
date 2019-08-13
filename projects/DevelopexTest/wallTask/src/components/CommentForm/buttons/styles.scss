@@ -1,0 +1,28 @@
+@import 'assets/_colors.scss';
+
+.form_btn {
+    font-size: 13px;
+    line-height: 17px;
+    color: $grey;
+    border: 1px solid $bright_grey;
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 9px;
+
+    &.postButton {
+        font-weight: bold;
+        background: $blue;
+        color: $white;
+        border-color: $blue;
+        &:hover {
+            
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        background: $light_blue;
+        color: $white;
+        border-color: $blue;
+    }
+}
