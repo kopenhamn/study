@@ -9,4 +9,22 @@
     bottom: 0;
     padding-left: 10px;
     border-top: 2px solid $separate_grey;
+
+    .btn {
+        font-size: 14px;
+        line-height: 18px;
+        color: $light_grey;
+        border: none;
+        margin-right: 9px;
+        margin-top: 7px;
+    
+        &.tray {
+            float: right;
+        }
+    
+        &:hover {
+            cursor: pointer;
+            color: $light_blue;
+        }
+    }
 }
