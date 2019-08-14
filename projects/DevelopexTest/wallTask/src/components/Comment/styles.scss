@@ -1,1 +1,42 @@
 @import 'assets/_colors.scss';
+
+.comment-container {
+    display: flex;
+
+    .user-avatar {
+        width: 25px;
+        height: 25px;
+    }
+
+    .comment {
+        flex: 1;
+        padding-left: 10px;
+
+        .comment-header {
+            font-weight: bold;
+            color: $dark_grey;
+        }
+
+        .comment-text {
+            font-size: 14px;
+            line-height: 16px;
+            color: $grey;
+        }
+
+        &.note {
+            
+            .comment-header {
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 18px;
+                color: $blue;
+            }
+
+            .comment-text {
+                font-size: 15px;
+                line-height: 18px;
+                color: $dark_grey;
+            }
+        }
+    }
+}
