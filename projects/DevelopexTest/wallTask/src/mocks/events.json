@@ -2,15 +2,15 @@
     "events": [
         {
             "id": 1,
-            "avatar": "src/components/Comment/images/defaultImage.png",
+            "avatar": "https://raw.githubusercontent.com/kopenhamn/study/master/projects/DevelopexTest/wallTask/src/components/Comment/images/defaultImage.png",
             "firstName": "Gui",
             "lastName": "Mariano",
-            "message": "BLA-BLA-BLA bla-bla-bla",
+            "message": "This metric is a key indicator of our ability of retain users. Active for us means logged in and using the product at least for 10 minutes. The 10 minute marker allows us focus on dedicated users that are invested in the product",
             "date": "Fri 07/08/2019",
             "comments": [
                 {
                     "id": 1,
-                    "avatar": "url",
+                    "avatar": "https://github.com/kopenhamn/study/blob/master/projects/DevelopexTest/wallTask/src/components/Comment/images/Lady.png?raw=true",
                     "firstName": "Casey",
                     "lastName": "Christiano",
                     "message": "This data looking really good",
@@ -18,7 +18,33 @@
                 },
                 {
                     "id": 2,
-                    "avatar": "url",
+                    "avatar": "https://github.com/kopenhamn/study/blob/master/projects/DevelopexTest/wallTask/src/components/Comment/images/Armstrong.png?raw=true",
+                    "firstName": "Neil",
+                    "lastName": "Armstrong",
+                    "message": "Why are not we seeing the data from this morning?",
+                    "date": "Fri 08/08/2019"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "avatar": "https://raw.githubusercontent.com/kopenhamn/study/master/projects/DevelopexTest/wallTask/src/components/Comment/images/defaultImage.png",
+            "firstName": "Gui",
+            "lastName": "Mariano",
+            "message": "This metric is a key indicator of our ability of retain users. Active for us means logged in and using the product at least for 10 minutes. The 10 minute marker allows us focus on dedicated users that are invested in the product.",
+            "date": "Fri 07/08/2019",
+            "comments": [
+                {
+                    "id": 1,
+                    "avatar": "https://github.com/kopenhamn/study/blob/master/projects/DevelopexTest/wallTask/src/components/Comment/images/Lady.png?raw=true",
+                    "firstName": "Casey",
+                    "lastName": "Christiano",
+                    "message": "This data looking really good.",
+                    "date": "Fri 08/08/2019"
+                },
+                {
+                    "id": 2,
+                    "avatar": "https://github.com/kopenhamn/study/blob/master/projects/DevelopexTest/wallTask/src/components/Comment/images/Armstrong.png?raw=true",
                     "firstName": "Neil",
                     "lastName": "Armstrong",
                     "message": "Why are not we seeing the data from this morning?",
