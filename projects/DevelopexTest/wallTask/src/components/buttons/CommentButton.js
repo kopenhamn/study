@@ -5,8 +5,8 @@ import './styles.scss'
 export function CommentButton(props) {
     return (
         <button 
-            onClick={props.comment}
-            className='footer_btn'
+            onClick={props.handleClick}
+            className='comment_btn btn'
         >
             <i className="fa fa-comment"></i>
             Comment

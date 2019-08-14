@@ -5,8 +5,8 @@ import './styles.scss'
 export function PostButton(props) {
     return (
         <button 
-            onClick={props.post}
-            className='postButton form_btn'
+            onClick={props.handleClick}
+            className='post_btn btn'
         >
             Post comment
         </button>

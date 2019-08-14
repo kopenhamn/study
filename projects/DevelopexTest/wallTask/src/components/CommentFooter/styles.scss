@@ -1,0 +1,26 @@
+@import 'assets/_colors.scss';
+
+.comment__footer {
+    box-sizing: border-box;
+    height: 36.5px;
+    width: 100%;
+    color: $light_grey;
+
+    .btn {
+        font-size: 12px;
+        line-height: 16px;
+        color: $light_grey;
+        margin-right: 10px;
+        border: none;
+
+        &:hover {
+            cursor: pointer;
+            color: $light_blue;
+        }
+    }
+
+    .date {
+        margin-right: 10px;
+        color: $bright_grey;
+    }
+}
