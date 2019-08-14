@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CommentButton, FollowButton, TrayButton } from './buttons';
+import { CommentButton, FollowButton, TrayButton } from 'components/buttons';
 
 import './styles.scss'
 

@@ -16,8 +16,8 @@
             -moz-box-sizing: border-box;
             box-sizing: border-box;
             width: 100%;
-            height: 80px;
-            margin: 8px 0;
+            height: 100px;
+            margin: 10px 0;
             border: 1px solid $separate_grey;
             padding: 10px 10px 10px 40px;
         }
@@ -37,7 +37,7 @@
             color: $grey;
             border: 1px solid $bright_grey;
             border-radius: 3px;
-            padding: 5px;
+            padding: 5px 10px;;
             margin-right: 10px;
 
             &.post_btn {
