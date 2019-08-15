@@ -1,5 +1,5 @@
 {
-    "events": [
+    "notes": [
         {
             "id": 1,
             "avatar": "https://raw.githubusercontent.com/kopenhamn/study/master/projects/DevelopexTest/wallTask/src/components/Comment/images/defaultImage.png",
@@ -49,6 +49,51 @@
                     "lastName": "Armstrong",
                     "message": "Why are not we seeing the data from this morning?",
                     "date": "Fri 08/08/2019"
+                }
+            ]
+        }
+    ],
+    "simples": [
+        {
+            "id": 1,
+            "title": "Spring break",
+            "text": "Mondey 08/10/2015 - Tuesday 08/11/2015",
+            "comments": [
+
+            ]
+        },
+        {
+            "id": 2,
+            "title": "@tferriss Twitter Mention",
+            "text": "Mondey 08/10/2015 - Tuesday 08/11/2015",
+            "comments": [
+                
+            ]
+        }
+    ],
+    "alerts": [
+        {
+            "id": 1,
+            "title": "$55,470",
+            "text": "on 07/15/2015 08:21 is more than 10% above or belove same time last fiscal quarter",
+            "comments": [
+                
+            ]
+        }
+    ],
+    "anonnotations": [
+        {
+            "id": 2,
+            "title": "$9.94M",
+            "text": "on Saturday 09/01/2012",
+            "comments": [
+                {
+                    "id":1,
+                    "avatar": "https://raw.githubusercontent.com/kopenhamn/study/master/projects/DevelopexTest/wallTask/src/components/Comment/images/defaultImage.png",
+                    "firstName": "Louis",
+                    "lastName": "Bedard",
+                    "message": "Look at our inventory level right now; seems really low.",
+                    "date": "Sat 09/01/2012"
                 }
             ]
         }
