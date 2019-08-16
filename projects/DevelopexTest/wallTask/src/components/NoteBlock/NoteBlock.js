@@ -4,7 +4,7 @@ import Event from 'components/Event';
 import Note from 'components/Note';
 import NoteFooter from 'components/NoteFooter';
 
-import wall from 'mocks/events.json';
+import mock from 'mocks/events.json';
 
 import './styles.scss';
 
@@ -21,7 +21,7 @@ export function NoteBlock(props) {
                     >
                         <div className='note-content'>
                             {
-                                wall[type].map(event => <Event 
+                                mock[type].map(event => <Event 
                                     key={event.id} 
                                     event={event} 
                                     type={type} 
@@ -30,7 +30,7 @@ export function NoteBlock(props) {
                         </div>
                         <NoteFooter />
                     </div>
-                    : wall[type].map(event => <div 
+                    : mock[type].map(event => <div 
                             className='note-block'
                             key={event.id}
                         >
