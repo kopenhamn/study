@@ -6,9 +6,9 @@
     padding: 15px;
     width: 100%;
     min-height: 70px;
-    max-height: 280px;
     margin-top: 40px;
     position: relative;
+    box-sizing: border-box;
 
     .note-content {
         height: 100%;
@@ -20,13 +20,58 @@
         &::-webkit-scrollbar {
             scroll-behavior: unset;
         }
-    
+
         .note-container {
+            font-size: 14px;
+            line-height: 18px;
+            color: $light_grey;
             display: flex;
-    
+        
+            .title {
+                font-weight: bold;
+                margin-bottom: 3px;
+            }
+        
+            .message {
+                margin-bottom: 15px;
+            }
+
             .fa-comment-alt {
                 color: $blue;
             }
+        
+            .fa-play, .fa-exclamation-triangle, .fa-comment-alt {
+                margin-right: 10px;
+            }
+            
+            &.simples {
+                .title {
+                    color: $dark_grey;
+                }
+                
+                .fa-play {
+                    color: $grey;
+                }
+            }
+        
+            &.alerts {
+        
+                .title {
+                    color: $red;
+                }
+                
+                .fa-exclamation-triangle {
+                    color: $red;
+                }
+            }
+        
+            &.anonnotations {
+        
+                .title {
+                    color: $blue;
+                }
+            }
+            
         }
     }
 }
