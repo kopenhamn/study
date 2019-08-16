@@ -89,7 +89,7 @@
             "comments": [
                 {
                     "id":1,
-                    "avatar": "https://raw.githubusercontent.com/kopenhamn/study/master/projects/DevelopexTest/wallTask/src/components/Comment/images/defaultImage.png",
+                    "avatar": "https://github.com/kopenhamn/study/blob/master/projects/DevelopexTest/wallTask/src/assets/avatars/Chaplin.png?raw=true",
                     "firstName": "Louis",
                     "lastName": "Bedard",
                     "message": "Look at our inventory level right now; seems really low.",
