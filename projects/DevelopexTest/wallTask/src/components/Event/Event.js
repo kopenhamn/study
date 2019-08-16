@@ -4,7 +4,6 @@ import Comment from 'components/Comment';
 import CommentFooter from 'components/CommentFooter';
 
 import * as icons from 'assets/icons.js';
-import './styles.scss';
 
 export function Event(props) {
     const {
