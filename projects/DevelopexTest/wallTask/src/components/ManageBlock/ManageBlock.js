@@ -38,7 +38,9 @@ export class ManageBlock extends React.Component {
         return (
             <div className='container'>
                 <div className='manage-block'>
-                    {manageTabs}
+                    <ul className='manage-block__tabs'>
+                        {manageTabs}
+                    </ul>
                     <ManageForm />
                 </div>
                 <NoteBlock types={this.state.types} />
