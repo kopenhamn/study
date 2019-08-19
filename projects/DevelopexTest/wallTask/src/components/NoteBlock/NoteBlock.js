@@ -19,7 +19,7 @@ export function NoteBlock(props) {
                         className='note-block'
                         key={type}
                     >
-                        <div className='note-content'>
+                        <div className='note-block__content'>
                             {
                                 mock[type].map(event => <Event 
                                     key={event.id} 
@@ -34,7 +34,7 @@ export function NoteBlock(props) {
                             className='note-block'
                             key={event.id}
                         >
-                            <div className='note-content'>
+                            <div className='note-block__content'>
                                 <Note event={event} type={type} />
                             </div>
                             <NoteFooter />
