@@ -7,6 +7,8 @@ import {
     AttachButton
 } from 'components/buttons';
 
+import { postCommet } from 'services';
+
 import defaultImage from './defaultImage.png';
 import './styles.scss';
 
@@ -45,25 +47,28 @@ export class ManageForm extends React.Component {
 
     handleSubmit = event => {
         this.setState({ value: '' })
-        alert('Comment was sent: ' + this.state.value);
+        const wallContent = postCommet('notes', this.state.value);
+
+        this.props.callback(wallContent);
+
         event.preventDefault();
     };
 
     render() {
         return (
-            <div className='manage__form'>
+            <div className='manage-block__form'>
                 <form onSubmit={this.handleSubmit}>
-                    <div className='textarea_container'>
+                    <div className='textarea'>
                         <img
                             src={this.props.userAvatar}
                             alt='user avatar'
                             className='user-avatar'
                         ></img>
                         <label>
-                            <textarea className='manage_textarea' value={this.state.value} onChange={this.handleChange} />
+                            <textarea className='textarea-input' value={this.state.value} onChange={this.handleChange} />
                         </label>
                     </div>
-                    <div className='manage_buttons'>
+                    <div className='footer-buttons'>
                         <PostButton post={this.handleSubmit} />
                         <ShareButton share={this.handleShare} />
                         <AttachButton attach={this.handleAttach} />

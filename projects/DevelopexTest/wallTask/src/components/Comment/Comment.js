@@ -17,7 +17,7 @@ export function Comment(props) {
                 alt='user avatar'
                 className='user-avatar'
             ></img>
-            <div className={props.note ? 'note comment' : 'comment'}>
+            <div className={props.note ? 'note' : 'comment'}>
                 <h2 className='comment-header'>{props.note && 'Note by'} {firstName} {lastName}</h2>
                 <p className='comment-text'>{message}</p>
             </div>

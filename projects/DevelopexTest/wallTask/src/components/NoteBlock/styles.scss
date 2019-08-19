@@ -10,10 +10,10 @@
     position: relative;
     box-sizing: border-box;
 
-    .note-content {
+    .note-block__content {
         height: 100%;
         width: 100%;
-        max-height: 250px;
+        max-height: 260px;
         margin-bottom: 25px;
         overflow-y: scroll;
         
@@ -65,8 +65,7 @@
                 }
             }
         
-            &.anonnotations {
-        
+            &.annotations {
                 .title {
                     color: $blue;
                 }

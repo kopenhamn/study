@@ -2,6 +2,7 @@ import React from 'react';
 
 import Comment from 'components/Comment';
 import CommentFooter from 'components/CommentFooter';
+import CommentBlock from 'components/CommentBlock';
 
 import * as icons from 'assets/icons.js';
 
@@ -20,10 +21,10 @@ export function Event(props) {
                 <Comment content={event} note={true} />
                 <CommentFooter date={event.date} />
                 {
-                    event.comments.map(comment => <div key={comment.id}>
-                        <Comment content={comment} />
-                        <CommentFooter date={comment.date} />
-                    </div>)
+                    event.comments.map(comment => <CommentBlock
+                        key={comment.id}
+                        comment={comment}
+                    />)
                 }
             </div>
         </div>
