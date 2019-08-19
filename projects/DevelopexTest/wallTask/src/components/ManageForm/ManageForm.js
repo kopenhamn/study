@@ -7,6 +7,8 @@ import {
     AttachButton
 } from 'components/buttons';
 
+import { postCommet } from 'services';
+
 import defaultImage from './defaultImage.png';
 import './styles.scss';
 
@@ -45,7 +47,10 @@ export class ManageForm extends React.Component {
 
     handleSubmit = event => {
         this.setState({ value: '' })
-        alert('Comment was sent: ' + this.state.value);
+        const wallContent = postCommet('notes', this.state.value);
+
+        this.props.callback(wallContent);
+
         event.preventDefault();
     };
 

@@ -4,12 +4,10 @@ import Event from 'components/Event';
 import Note from 'components/Note';
 import NoteFooter from 'components/NoteFooter';
 
-import mock from 'mocks/events.json';
-
 import './styles.scss';
 
 export function NoteBlock(props) {
-    const types = props.types;
+    const { content, types } = props;
     
     return (
         <div className='notes'>
@@ -21,7 +19,7 @@ export function NoteBlock(props) {
                     >
                         <div className='note-block__content'>
                             {
-                                mock[type].map(event => <Event 
+                                content[type].map(event => <Event 
                                     key={event.id} 
                                     event={event} 
                                     type={type} 
@@ -30,7 +28,7 @@ export function NoteBlock(props) {
                         </div>
                         <NoteFooter />
                     </div>
-                    : mock[type].map(event => <div 
+                    : content[type].map(event => <div 
                             className='note-block'
                             key={event.id}
                         >

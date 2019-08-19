@@ -3,6 +3,13 @@ import React from 'react';
 import Tab from 'components/Tab';
 import ManageForm from 'components/ManageForm'
 import NoteBlock from 'components/NoteBlock';
+
+import {
+    updateWallContent,
+    getWallContent,
+    setWallContent
+} from 'services';
+import mock from 'mocks/events.json';
 import { panes } from './manageTabs.config';
 
 import './styles.scss'
@@ -10,12 +17,22 @@ import './styles.scss'
 export class ManageBlock extends React.Component {
     state={
         selectedTabId: 1,
+        wallContent: mock,
         types: ['notes', 'simples', 'alerts', 'annotations']
     }
 
     isActive = id => this.state.selectedTabId === id;
 
-    setActiveTab = selectedTabId => this.setState({ selectedTabId, types: this.setTypes(selectedTabId) });
+    setActiveTab = selectedTabId => this.setState({
+        selectedTabId,
+        types: this.setTypes(selectedTabId)
+    });
+
+    updateContent = (wallContent) => {
+        this.setState({wallContent})
+        const newWallContent = JSON.stringify(wallContent);
+        setWallContent(newWallContent);
+    }
 
     setTypes = (selectedTabId) => {
         switch (selectedTabId) {
@@ -25,6 +42,12 @@ export class ManageBlock extends React.Component {
             case 4: return ['alerts'];
             default: return ['notes', 'simples', 'alerts', 'annotations'];
         }
+    }
+
+    componentDidMount() {
+        updateWallContent();
+        const wallContent = JSON.parse(getWallContent());
+        this.setState({wallContent})
     }
 
     render() {
@@ -41,9 +64,9 @@ export class ManageBlock extends React.Component {
                     <ul className='manage-block__tabs'>
                         {manageTabs}
                     </ul>
-                    <ManageForm />
+                    <ManageForm callback={this.updateContent}/>
                 </div>
-                <NoteBlock types={this.state.types} />
+                <NoteBlock content={this.state.wallContent} types={this.state.types} />
             </div>
         )
     }
