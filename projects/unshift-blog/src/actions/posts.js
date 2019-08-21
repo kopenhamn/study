@@ -59,8 +59,6 @@ export const startEditPost = (post, id) => {
         },
         data: post
       });
-
-      dispatch(editPost(response.data.post));
     } catch (e) {
       throw new Error(e.response.data.error);
     }
@@ -75,7 +73,7 @@ export const deletePost = id => ({
 export const startDeletePost = id => {
   return async dispatch => {
     try {
-      const response = await axios({
+      await axios({
         url: `https://bloggy-api.herokuapp.com/posts/${id}/`,
         method: "del",
         headers: {
