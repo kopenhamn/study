@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import PostForm from "./PostForm";
-import { startAddPost } from "../actions/posts";
+import { startAddPost, startSetPosts } from "../actions/posts";
 
 export class AddPostPage extends React.Component {
   constructor(props) {
@@ -27,6 +27,7 @@ export class AddPostPage extends React.Component {
   onSubmit = async post => {
     try {
       await this.props.startAddPost(post);
+      await this.props.startSetPosts();
       this.props.history.push("/");
     } catch (e) {
       this.setState({ error: e.message });
@@ -44,7 +45,8 @@ export class AddPostPage extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  startAddPost: post => dispatch(startAddPost(post))
+  startAddPost: post => dispatch(startAddPost(post)),
+  startSetPosts: () => dispatch(startSetPosts())
 });
 
 export default connect(
