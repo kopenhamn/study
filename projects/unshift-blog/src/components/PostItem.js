@@ -46,7 +46,6 @@ export class PostItem extends React.Component {
     }
   }
   renderPost() {
-    console.log(this.props);
     if (this.props.post) {
       return (
         <div className="container post-item">
