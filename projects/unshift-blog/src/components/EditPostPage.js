@@ -2,13 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 
 import PostForm from "./PostForm";
-import { startEditPost } from "../actions/posts";
-import { startDeletePost } from "../actions/posts";
+import { startEditPost, startSetPosts, startDeletePost } from "../actions/posts";
 
 export class EditPostPage extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       error: ""
     };
@@ -28,6 +26,7 @@ export class EditPostPage extends React.Component {
   onSubmit = async post => {
     try {
       await this.props.startEditPost(post, this.props.post.id);
+      await this.props.startSetPosts();
       this.props.history.push("/");
     } catch (e) {
       this.setState({ error: e.message });
@@ -60,12 +59,13 @@ export class EditPostPage extends React.Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  post: state.posts.find(post => post.id === props.match.params.id)
+  post: state.posts.find(post => post.id == props.match.params.id)
 });
 
 const mapDispatchToProps = dispatch => ({
   startEditPost: (post, id) => dispatch(startEditPost(post, id)),
-  startDeletePost: id => dispatch(startDeletePost(id))
+  startDeletePost: id => dispatch(startDeletePost(id)),
+  startSetPosts: () => dispatch(startSetPosts())
 });
 
 export default connect(
