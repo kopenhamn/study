@@ -1,0 +1,5 @@
+{
+    "port": 5000,
+    "mongooseUrl": "mongodb+srv://Muxau:misha1984@mern-jn45b.mongodb.net/app?retryWrites=true&w=majority",
+    "jwtSecret": "secretSalt"
+}
