@@ -88,6 +88,8 @@ router.post(
         expiresIn: "1h"
       });
 
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
       res.json({ token, userId: user.id });
     } catch (error) {
       res
