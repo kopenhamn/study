@@ -1,21 +1,21 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import { Login, Main, Links } from "./pages";
 
-export const useRoutes = isAuthenticated => {
-  if (isAuthenticated) {
-    return (
-      <Switch>
-        <Route path='/' exact>
-          <Main />
-        </Route>
-        <Route path='/links' exact>
-          <Links />
-        </Route>
-      </Switch>
-    );
-  }
-
-  return <Login />;
+export const useRoutes = (isAuthenticated) => {
+  return (
+    <Switch>
+      <Route path="/" exact>
+        <Main />
+      </Route>
+      <Route path="/links" exact>
+        {isAuthenticated ? <Links /> : <Redirect to="/login" />}
+      </Route>
+      <Route path="/login" exact>
+        <Login />
+      </Route>
+      <Route>The page is not found (404 error)</Route>
+    </Switch>
+  );
 };

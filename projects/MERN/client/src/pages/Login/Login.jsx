@@ -61,6 +61,7 @@ const SignIn = () => {
     if (email && password) {
       return post(LOGIN_URL, { email, password })
         .then(res => setUser(res.data))
+        .then(() => window.location.href = '/')
         .catch(error => console.log('error :', error));
     }
 
