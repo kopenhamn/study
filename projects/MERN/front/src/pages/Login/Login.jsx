@@ -7,7 +7,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -15,19 +14,6 @@ import Container from "@material-ui/core/Container";
 
 import { post } from "../../services/api/user";
 import { setUser } from '../../services/auth';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -49,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-const LOGIN_URL = "http://localhost:5000/api/auth/login";
+const LOGIN_API = "http://localhost:5000/api/auth/login";
 
 const SignIn = () => {
   const classes = useStyles();
@@ -59,7 +45,7 @@ const SignIn = () => {
   const handleSubmit = event => {
     event.preventDefault();
     if (email && password) {
-      return post(LOGIN_URL, { email, password })
+      return post(LOGIN_API, { email, password })
         .then(res => setUser(res.data))
         .then(() => window.location.href = '/')
         .catch(error => console.log('error :', error));
@@ -133,16 +119,13 @@ const SignIn = () => {
               </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="/sign-up" variant="body2">
                 {"Don't have an account? Sign Up"}
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={8}>
-        <Copyright />
-      </Box>
     </Container>
   );
 };
