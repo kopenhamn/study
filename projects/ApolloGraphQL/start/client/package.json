@@ -41,6 +41,7 @@
   ],
   "devDependencies": {
     "@apollo/react-testing": "3.0.0",
+    "@playlyfe/gql": "^2.6.2",
     "@testing-library/jest-dom": "^4.0.0",
     "@testing-library/react": "^8.0.7",
     "@types/jest": "^24.0.23",
